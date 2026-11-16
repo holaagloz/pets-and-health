@@ -1,0 +1,81 @@
+{
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "direccion-de-arte.html"
+        ],
+        "createdAt": "2026-11-15T05:09:46.764Z",
+        "reason": "Claude decided: remaining glow is the scanner light bar, the approved lightbox signature (direction contract 'Caja de luz'); a light source glowing is literal"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "direccion-de-arte-2.html"
+        ],
+        "createdAt": "2026-11-15T05:46:21.880Z",
+        "reason": "Claude decided: false positive; the page ground is light ice #F1F5FB and the navy shadow is an offset neutral elevation; the glowing ECG line comes from the user-pinned reference (post 41)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "direccion-de-arte-2.html"
+        ],
+        "createdAt": "2026-11-15T05:46:22.350Z",
+        "reason": "Claude decided: false positive; .bloque has padding var(--section-y) var(--gutter) (64-128px / 16-64px), which the detector does not resolve"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "direccion-de-arte-3.html"
+        ],
+        "createdAt": "2026-11-15T06:05:52.772Z",
+        "reason": "Claude decided: remaining glows are literal: the dog rim light separates a dark-coated dog from the navy ground (legibility), the ECG pulse head is a light source, and the CTA ring is the heartbeat expanding once per beat; static decorative button glow was removed"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "direccion-de-arte-3.html"
+        ],
+        "createdAt": "2026-11-15T06:13:07.413Z",
+        "reason": "Claude decided: false positives; .bloque and .pie pad with var(--section-y)/var(--gutter)/clamp() (60-128px by 16-64px), which the detector does not resolve; .monitor__pantalla's only child at its bottom edge is the decorative ECG svg, and its text label is inset 16px/20px"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-15T14:53:55.049Z",
+        "reason": "Claude decided: false positives; .bloque pads with var(--section-y)/var(--gutter) (60-128px by 16-64px) which the detector does not resolve; .diagnostico__pantalla's edge children are the decorative monitor svg with labels inset 20px; .acordeon's summaries pad 22px vertically below its top rule"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-15T14:54:06.085Z",
+        "reason": "Claude decided: the only flagged shadows are #010C26 offset elevation (0 14-40px y-offset, negative spread) in the page's own darkest navy, not zero-offset halos; the ECG pulse head and CTA heartbeat ring are literal light sources, as in approved sheet 3"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "direccion-de-arte-4.html"
+        ],
+        "createdAt": "2026-11-15T19:22:17.487Z",
+        "reason": "Claude: false positives on .iconos and .pie; both have clamp() padding (22-36px, 28-56px + gutter) visible in the 375/1440 screenshots; the detector does not resolve clamp()"
+      }
+    ]
+  }
+}

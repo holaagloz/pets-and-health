@@ -1,0 +1,1165 @@
+<!doctype html>
+<html lang="es-CR" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pets &amp; Health · Dirección de arte 4</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0668D0">
+<link rel="icon" href="img/logo/simbolo-estetoscopio.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/gabarito-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Gabarito";src:url(fonts/gabarito-var-latin.woff2) format("woff2");font-weight:400 900;font-display:swap}
+
+/* Dirección 4 «Recreo»: el azul rey de «El segundo hogar» es el cielo; encima juegan peluditos dibujados a mano */
+:root{
+  --rey:#0668D0;          /* fondo de toda la página (el azul de «El segundo hogar») */
+  --hielo:#F1F5FB;        /* los peluditos, los títulos y las tarjetas */
+  --marino:#021C4C;       /* el trazo de cada dibujo y la letra sobre claro */
+  --hondo:#062F75;        /* la sombra de los dibujos, como stickers */
+  --menta:#3ED2BC;        /* la pelota y el botón: lo que se toca */
+  --menta-clara:#A9F7F0;  /* brillos, lengüitas y la luna */
+  --clinico:#0882E8;      /* garabatos del fondo y un ojo de la gata */
+  --hielo-sombra:#D3DEEE; /* derivado del hielo: patas del lado lejano */
+
+  --texto:var(--hielo);
+  --linea:rgba(241,245,251,.22);
+
+  --cta:var(--menta);
+  --cta-hover:var(--menta-clara);
+  --cta-ink:var(--marino);
+
+  --font:"Gabarito",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --ease-pop:cubic-bezier(.34,1.9,.5,1);
+  --t-hover:.22s;
+
+  --r-xl:30px;--r-lg:22px;--r-md:14px;
+  --trazo:2.5px solid var(--marino);
+  --sombra:0 7px 0 var(--hondo);
+
+  --gutter:clamp(16px,4.5vw,64px);
+  --maxw:1240px;
+  --section-y:clamp(56px,8vw,112px);
+
+  /* Garabatos del fondo: cruces, huesos, corazones y aros, apenas visibles */
+  --papel:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' fill='none' stroke='%23F1F5FB' stroke-opacity='.075' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M34 28v18M25 37h18'/%3E%3Ccircle cx='190' cy='46' r='8'/%3E%3Cpath d='M118 126c-8-10 4-18 9-8h20c5-10 17-2 9 8 8 10-4 18-9 8h-20c-5 10-17 2-9-8z'/%3E%3Cpath d='M58 190c-7-6-5-15 2-15 4 0 6 4 6 4s2-4 6-4c7 0 9 9 2 15l-8 7z'/%3E%3Cpath d='M204 196v14M197 203h14'/%3E%3Cpath d='M92 64c4 3 10 3 14 0'/%3E%3C/svg%3E");
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--rey);scrollbar-color:var(--menta) var(--hondo)}
+body{margin:0;background:var(--rey) var(--papel) 0 0/240px 240px;color:var(--texto);font-family:var(--font);font-size:clamp(1rem,.96rem + .2vw,1.0625rem);line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--menta);color:var(--marino)}
+:focus-visible{outline:3px solid var(--menta-clara);outline-offset:3px;border-radius:10px}
+.claro :focus-visible{outline-color:var(--marino)}
+.sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ===== Botón: un juguete que se aprieta ===== */
+.boton{position:relative;display:inline-flex;align-items:center;gap:12px;min-height:58px;padding:0 24px 0 6px;border-radius:999px;border:var(--trazo);background:var(--cta);color:var(--cta-ink);text-decoration:none;font-weight:800;font-size:1.0625rem;letter-spacing:-.01em;
+  box-shadow:0 6px 0 var(--marino);transition:background var(--t-hover) ease,transform .16s var(--ease),box-shadow .16s var(--ease)}
+.boton__icono{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--marino);flex:none}
+.boton__icono svg{width:26px;height:16px;overflow:visible}
+.boton__icono path{fill:none;stroke:var(--menta);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60;stroke-dashoffset:0}
+.boton:hover{background:var(--cta-hover);transform:translateY(-2px);box-shadow:0 8px 0 var(--marino)}
+.boton:hover .boton__icono path{animation:pulso 1.1s ease-in-out infinite}
+.boton:active{transform:translateY(5px);box-shadow:0 1px 0 var(--marino)}
+@keyframes pulso{0%{stroke-dashoffset:60}55%{stroke-dashoffset:0}100%{stroke-dashoffset:-60}}
+.boton--contorno{background:transparent;color:var(--hielo);border-color:var(--hielo);box-shadow:0 6px 0 var(--hondo)}
+.boton--contorno .boton__icono{background:var(--hielo)}
+.boton--contorno .boton__icono path{stroke:var(--marino)}
+.boton--contorno:hover{background:rgba(241,245,251,.12);box-shadow:0 8px 0 var(--hondo)}
+.boton--contorno:active{box-shadow:0 1px 0 var(--hondo)}
+.boton--chico{min-height:52px;font-size:1rem;padding-right:20px}
+.boton--chico .boton__icono{width:36px;height:36px}
+.icono-tel{width:20px!important;height:20px!important;fill:none;stroke:var(--marino);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+
+.tel{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:600;text-decoration:none;color:var(--hielo)}
+.tel b{font-weight:900;text-decoration:underline wavy var(--menta);text-decoration-thickness:2px;text-underline-offset:6px}
+.tel:hover b{text-decoration-color:var(--menta-clara)}
+
+/* ===== Navegación ===== */
+.nav{position:absolute;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px var(--gutter)}
+.nav__logo{display:block;height:48px}
+.nav__logo img{height:100%;width:auto}
+.nav__acciones{display:flex;align-items:center;gap:10px}
+.nav__urgencia{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 16px;border-radius:999px;background:var(--marino);color:var(--hielo);text-decoration:none;font-weight:700;font-size:.9375rem;box-shadow:0 4px 0 var(--hondo);transition:transform .16s var(--ease)}
+.nav__urgencia b{color:var(--menta);font-weight:900}
+.nav__urgencia:hover{transform:translateY(-2px)}
+.nav__wa{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--hielo);border:var(--trazo);box-shadow:0 4px 0 var(--marino);transition:transform .16s var(--ease)}
+.nav__wa:hover{transform:translateY(-2px) rotate(-8deg)}
+.nav__wa svg{width:21px;height:21px;fill:var(--marino)}
+@media (max-width:520px){.nav__urgencia span{display:none}}
+
+/* ===== Portada ===== */
+.portada{--fs-g:21.4vw;--pw:2.7em;--gw:.62em;
+  position:relative;display:flex;flex-direction:column;min-height:max(90svh,680px);padding:94px var(--gutter) 24px;overflow:hidden;isolation:isolate;
+  background:radial-gradient(70% 46% at 72% 62%,rgba(169,247,240,.16),rgba(169,247,240,0) 70%)}
+.titulo{position:relative;z-index:3;margin:0;display:flex;flex-direction:column;flex:1 1 auto;font-weight:900;color:var(--hielo)}
+.titulo__linea{display:block;font-weight:800;font-size:clamp(2rem,10.8vw,4.6rem);line-height:1;letter-spacing:-.03em;max-width:9.5ch;text-wrap:balance}
+.titulo__linea .pal{display:inline-block}
+.titulo__aire{flex:1 0 auto;min-height:calc(var(--fs-g)*1.5)}
+.gigante{position:relative;display:block;align-self:flex-start;font-size:var(--fs-g);line-height:.86;letter-spacing:-.055em;white-space:nowrap}
+.gigante__texto{position:relative;z-index:2}
+.gigante__texto .gl{display:inline-block;transform-origin:50% 100%}
+.bola{position:relative;display:inline-block;width:.3em;height:.3em;margin-left:.03em;vertical-align:baseline;z-index:3}
+.bola svg{width:100%;height:100%;overflow:visible;transform-origin:50% 100%}
+
+/* El dálmata y la gata viven sobre las letras: todo se mide en la letra gigante.
+   El dálmata va detrás de las letras para que las astas de «d», «i» y «t» se lean delante de sus patas */
+.perro{position:absolute;z-index:1;width:var(--pw);left:calc(3.66em - .8875*var(--pw));top:calc(.26em - .65*var(--pw));letter-spacing:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.perro svg{width:100%;height:auto;overflow:visible}
+.perro__salto{position:absolute;left:0;top:0;opacity:0;visibility:hidden}
+.globo{position:absolute;width:44%;right:-8%;top:-30%;opacity:0;visibility:hidden;pointer-events:none}
+.gata{position:absolute;z-index:3;width:var(--gw);left:calc(1.15em - .5*var(--gw));top:calc(.095em - 1.2*var(--gw));letter-spacing:0}
+.gata svg{width:100%;height:auto;overflow:visible}
+
+/* El dálmata termina sentado de frente, mirándote. Celular: sobre «itos», en el mismo lugar donde juega.
+   Las patas quedan sobre la letra baja (.51em sobre la línea base); .0692 es el aire bajo las patas del dibujo */
+.portada{--sw:1.85em}
+.sentado{position:absolute;z-index:1;width:var(--sw);left:calc(4.2em - var(--sw));bottom:calc(.6em - .0692*var(--sw));letter-spacing:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.sentado svg{width:100%;height:auto;overflow:visible}
+.sentado .globo{width:58%;left:-40%;right:auto;top:0}
+html:not(.js) .perro{display:none}
+@media (prefers-reduced-motion:reduce){.perro{display:none}}
+
+.estela{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+.estela path{fill:none;stroke:var(--hielo);stroke-width:3.2;stroke-linecap:round;stroke-dasharray:0 11;opacity:.9}
+
+.portada__pie{position:relative;z-index:4;margin-top:22px;max-width:30rem}
+.portada__sub{margin:0 0 16px;font-size:clamp(1rem,.95rem + .3vw,1.1875rem);line-height:1.45;color:var(--hielo)}
+.portada__sub b{font-weight:800}
+.portada__acciones{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px}
+
+.decor{position:absolute;inset:0;z-index:1;pointer-events:none}
+.garabato{position:absolute;width:var(--t,32px);height:var(--t,32px);overflow:visible}
+.d1{right:7%;top:17%}.d2{right:30%;top:23%;transform:rotate(-12deg)}.d3{left:52%;top:13.5%}.d4{right:5%;top:33%;transform:rotate(18deg)}.d5{left:3%;top:46%;transform:rotate(-20deg)}.d6{display:none}
+
+@media (min-width:900px){
+  .portada{--fs-g:min(19vw,30svh);--pw:2.05em;--gw:.46em;--f1:min(4.6vw,8.4svh);
+    display:grid;grid-template-rows:auto 1fr;padding:118px var(--gutter) calc(var(--fs-g)*.2);min-height:max(100svh,720px)}
+  .nav{padding-top:18px}
+  .nav__logo{height:60px}
+  .titulo{grid-area:1/1/3/2}
+  .titulo__linea{font-size:var(--f1);max-width:none;white-space:nowrap}
+  .titulo__aire{min-height:calc(var(--fs-g)*1.25)}
+  .portada__pie{grid-area:1/1/2/2;align-self:start;margin-top:calc(var(--f1) + 26px);max-width:26rem}
+  .d1{right:8%;top:20%}.d2{right:34%;top:17%}.d3{left:46%;top:36%}.d4{right:3.5%;top:46%}.d5{left:auto;right:46%;top:24%}.d6{display:block;right:20%;top:11%}
+  /* Escritorio: el perrito llena el hueco a la derecha de «peluditos.».
+     Si cabe a la derecha (--libre ≥ --sw) se sienta en el piso, centrado en el hueco;
+     si no cabe (pantallas menos anchas), se sube a «tos.» con la orilla derecha junto a la pelota.
+     clamp(0px, x*1000, tope) hace de interruptor: 0 si no cabe, el tope si cabe. 4.07em = ancho de «peluditos.» */
+  .portada{--sw:min(1.65em,400px,52svh)}
+  .sentado{--libre:calc(100vw - 2*var(--gutter) - 16px - 4.07em);--cabe:calc((var(--libre) - var(--sw))*1000);
+    left:calc(4.12em - var(--sw) + clamp(0px, var(--cabe), (var(--libre) + var(--sw))/2 - .05em));
+    bottom:calc(.6em - .0692*var(--sw) - clamp(0px, var(--cabe), .51em))}
+}
+
+.muestra__controles{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;margin:0;padding:14px var(--gutter);background:var(--marino);color:var(--hielo)}
+.repetir{min-height:44px;padding:0 18px;border-radius:999px;border:2px solid var(--menta);background:transparent;color:var(--hielo);font:inherit;font-weight:700;cursor:pointer}
+.repetir:hover{background:rgba(62,210,188,.14)}
+.muestra__nota{font-size:.875rem;color:var(--hielo);opacity:.85}
+
+/* ===== Bloques ===== */
+.bloque{position:relative;padding:var(--section-y) var(--gutter)}
+.bloque__in{position:relative;max-width:var(--maxw);margin:0 auto}
+.h2{margin:0 0 .4em;font-weight:900;font-size:clamp(2.3rem,1.5rem + 3.6vw,4.4rem);line-height:.98;letter-spacing:-.04em;max-width:14ch;text-wrap:balance}
+.h2 .palabra{will-change:transform}
+.lead{margin:0;max-width:50ch;font-size:clamp(1.0625rem,1rem + .3vw,1.25rem);color:var(--hielo)}
+.chips{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.chips li{display:inline-flex;align-items:center;gap:8px;min-height:38px;padding:0 15px;border-radius:999px;background:var(--hielo);color:var(--marino);font-size:.9375rem;font-weight:700;box-shadow:0 4px 0 var(--hondo)}
+.chips li svg{width:18px;height:18px}
+.raya{display:block;width:min(260px,60%);height:22px;margin:0 auto;overflow:visible}
+.raya path{fill:none;stroke:var(--hielo);stroke-width:3;stroke-linecap:round;opacity:.5}
+
+/* La idea */
+.idea{display:grid;gap:26px}
+@media (min-width:900px){.idea{grid-template-columns:1.05fr 1fr;align-items:end;column-gap:72px}}
+
+/* Paleta */
+.manchas{list-style:none;margin:clamp(28px,5vw,48px) 0 0;padding:0;display:grid;gap:14px}
+.mancha{display:grid;grid-template-columns:76px 1fr;align-items:center;gap:4px 16px}
+.mancha svg{grid-row:span 2;width:76px;height:60px;overflow:visible}
+.mancha__nombre{align-self:end;font-weight:900;font-size:1.25rem;line-height:1.1;letter-spacing:-.02em}
+.mancha__nombre small{margin-left:8px;font-size:.8125rem;font-weight:700;opacity:.85;font-variant-numeric:tabular-nums;letter-spacing:0}
+.mancha__papel{align-self:start;font-size:.9375rem;line-height:1.35}
+@media (min-width:700px){.manchas{grid-template-columns:1fr 1fr;column-gap:40px;row-gap:22px}}
+@media (min-width:1100px){.manchas{grid-template-columns:repeat(3,1fr)}}
+
+/* Letras */
+.letras{display:grid;gap:30px;margin-top:clamp(28px,5vw,44px)}
+.letra{display:grid;gap:10px;align-content:start;padding-top:20px;border-top:2px dashed var(--linea)}
+.letra__nota{margin:0;font-size:.9375rem;opacity:.9}
+.muestra-display{position:relative;margin:0;font-weight:900;font-size:clamp(3rem,14vw,8rem);line-height:.9;letter-spacing:-.05em}
+.subrayado{position:relative;display:inline-block}
+.subrayado svg{position:absolute;left:-2%;bottom:-.16em;width:104%;height:.3em;overflow:visible}
+.subrayado path{fill:none;stroke:var(--menta);stroke-width:7;stroke-linecap:round}
+.muestra-display .bola{margin-left:.04em}
+.muestra-h2{margin:0;font-weight:800;font-size:clamp(2rem,1.5rem + 2.2vw,3.25rem);line-height:1;letter-spacing:-.03em;max-width:16ch}
+.muestra-p{margin:0;max-width:56ch;font-size:1.0625rem}
+@media (min-width:900px){.letras{grid-template-columns:1.25fr 1fr}.letra--grande{grid-row:span 2}}
+
+/* Elenco */
+.elenco{list-style:none;margin:clamp(28px,5vw,48px) 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:28px 18px}
+.personaje{display:grid;justify-items:center;align-content:end;gap:10px;text-align:center}
+.personaje svg{width:100%;height:auto;overflow:visible}
+.personaje--gata svg{width:58%}
+.personaje b{display:block;font-size:1.125rem;font-weight:900;line-height:1.1}
+.personaje span{font-size:.875rem;opacity:.9;line-height:1.3}
+.personaje .cola-css{transform-box:fill-box;transform-origin:85% 92%}
+.personaje:hover .cola-css{animation:menear .16s ease-in-out infinite alternate}
+@keyframes menear{from{transform:rotate(-10deg)}to{transform:rotate(12deg)}}
+@media (min-width:900px){.elenco{grid-template-columns:repeat(4,1fr);gap:28px}}
+
+.iconos{margin-top:clamp(36px,6vw,64px);padding:clamp(22px,4vw,36px);border-radius:var(--r-xl);background:var(--hielo);color:var(--marino);border:var(--trazo);box-shadow:var(--sombra)}
+.iconos h3{margin:0 0 18px;font-size:clamp(1.4rem,1.2rem + .9vw,1.9rem);font-weight:900;line-height:1.05;letter-spacing:-.025em}
+.iconos ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px 10px}
+.iconos li{display:grid;justify-items:center;gap:6px;text-align:center;font-size:.9375rem;font-weight:700;line-height:1.2}
+.iconos svg{width:56px;height:56px;overflow:visible}
+@media (min-width:900px){.iconos ul{grid-template-columns:repeat(6,1fr)}}
+
+/* Foto real con garabatos */
+.foto{display:grid;gap:28px;align-items:center}
+.pegatina{position:relative;width:min(300px,78vw);aspect-ratio:1;margin:28px auto 0}
+.pegatina__fondo{position:absolute;inset:0;border-radius:50%;background:var(--hielo);border:3px solid var(--marino);box-shadow:0 8px 0 var(--hondo)}
+/* La foto se recorta abajo con el círculo y la cabeza se sale por arriba */
+.pegatina__foto{position:absolute;inset:0;clip-path:inset(-60% 3px 3px 3px round 0 0 min(147px,calc(39vw - 3px)) min(147px,calc(39vw - 3px)))}
+.pegatina__foto img{position:absolute;left:6%;bottom:0;width:88%;height:auto}
+.pegatina__garabatos{position:absolute;inset:-14%;width:128%;height:128%;overflow:visible;pointer-events:none}
+.pegatina__garabatos path,.pegatina__garabatos circle{fill:none;stroke-linecap:round;stroke-linejoin:round}
+@media (min-width:900px){.foto{grid-template-columns:1fr 1fr;column-gap:72px}.pegatina{margin-top:0}}
+
+/* La pelota que late */
+.lienzo{position:relative;margin-top:24px;border-radius:var(--r-lg);background:var(--marino);border:var(--trazo);box-shadow:var(--sombra);overflow:hidden}
+.lienzo svg{width:100%;height:auto}
+.lienzo__piso{fill:none;stroke:rgba(241,245,251,.35);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:2 9}
+.lienzo__estela{fill:none;stroke:var(--menta);stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
+.ver{display:inline-flex;align-items:center;gap:10px;min-height:44px;margin-top:14px;padding:0;border:0;background:none;color:var(--hielo);font:inherit;font-weight:800;cursor:pointer}
+.ver::before{content:"";width:28px;height:28px;border-radius:50%;border:2.5px solid var(--hielo);background:radial-gradient(circle,var(--menta) 0 5px,transparent 5.5px)}
+.no-js .ver{display:none}
+.movimiento{display:grid;gap:10px}
+@media (min-width:900px){.movimiento{grid-template-columns:minmax(0,24rem) 1fr;column-gap:64px;align-items:center}.lienzo{margin-top:0}}
+
+/* Botón y tarjetas */
+.botones{display:flex;flex-wrap:wrap;gap:18px 22px;align-items:center;margin-top:26px}
+.tarjetas{display:grid;gap:34px;margin-top:clamp(70px,9vw,96px)}
+.tarjeta{position:relative;border-radius:var(--r-xl);border:var(--trazo);box-shadow:var(--sombra);padding:26px 24px 28px;display:grid;gap:12px;justify-items:start}
+.tarjeta h3{margin:0;font-weight:900;font-size:clamp(1.8rem,1.3rem + 1.4vw,2.4rem);line-height:1;letter-spacing:-.035em}
+.tarjeta p{margin:0}
+.tarjeta--clara{background:var(--hielo);color:var(--marino)}
+.tarjeta__icono{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--menta);border:var(--trazo)}
+.tarjeta__icono svg{width:40px;height:40px;overflow:visible}
+.tarjeta__asoma{position:absolute;right:20px;top:-80px;width:136px;height:auto;overflow:visible;pointer-events:none}
+.tarjeta__asoma .cabeza-css{transform-box:fill-box;transform-origin:30% 90%;transition:transform .45s var(--ease-pop)}
+.tarjeta--clara:hover .tarjeta__asoma .cabeza-css{transform:rotate(-12deg)}
+.enlace{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:800;text-decoration:underline wavy var(--clinico);text-decoration-thickness:2px;text-underline-offset:6px}
+.tarjeta--noche{background:var(--marino);color:var(--hielo);padding-top:0;overflow:hidden}
+.noche{position:relative;width:calc(100% + 48px);margin:0 -24px 6px;height:170px;background:radial-gradient(80% 90% at 70% 10%,#0A2A66,var(--marino) 70%)}
+.noche svg{position:absolute;overflow:visible}
+.noche__luna{width:62px;right:26px;top:20px}
+.noche__gata{width:min(220px,62%);left:20px;bottom:6px}
+.noche__estrella{width:var(--t,16px);height:var(--t,16px)}
+.zz{position:absolute;left:112px;top:28px;font-weight:900;color:var(--menta-clara);font-size:1.4rem;line-height:1}
+.zz span{display:inline-block;animation:zz 2.6s ease-in-out infinite}
+.zz span:nth-child(2){font-size:.75em;animation-delay:.5s}
+@keyframes zz{0%,100%{transform:translateY(0);opacity:.35}50%{transform:translateY(-8px);opacity:1}}
+@media (min-width:900px){.tarjetas{grid-template-columns:1fr 1fr;align-items:stretch;column-gap:32px}}
+
+/* Pie */
+.pie{position:relative;background:var(--marino);color:var(--hielo);padding:clamp(28px,5vw,56px) var(--gutter) 36px}
+.pie__ola{display:block;width:100%;height:clamp(40px,6vw,70px);margin-bottom:-1px}
+.pie__in{max-width:var(--maxw);margin:0 auto;display:grid;gap:16px;justify-items:start}
+.pie__logo{width:min(240px,62vw);height:auto}
+.pie__lema{margin:0;font-weight:900;font-size:clamp(1.6rem,1.2rem + 1.6vw,2.4rem);line-height:1;letter-spacing:-.03em}
+.pie__lema .bola{width:.42em;height:.42em;margin-left:.06em}
+.pie p{margin:0;font-size:.8125rem;max-width:70ch;opacity:.9}
+.pie p.pie__lema{opacity:1;font-size:clamp(1.6rem,1.2rem + 1.6vw,2.4rem)}
+
+/* Estados ocultos para animar: solo con JS y con rescate */
+.js .portada [data-pieza],.js .nav [data-pieza]{visibility:hidden;animation:rescate 0s 5s forwards}
+@keyframes rescate{to{visibility:visible}}
+@media (prefers-reduced-motion:no-preference){
+  .pie__lema .bola svg{animation:badum 4.2s ease-in-out 1s infinite}
+}
+@keyframes badum{0%,30%,100%{transform:translateY(0)}6%{transform:translateY(-60%)}12%{transform:translateY(0) scale(1.12,.86)}17%{transform:translateY(-28%)}22%{transform:translateY(0) scale(1.06,.94)}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;transition-delay:0s!important;scroll-behavior:auto!important}
+  .js .portada [data-pieza],.js .nav [data-pieza]{visibility:visible;animation:none}
+}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:clip}
+</style>
+<script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
+</head>
+<body>
+
+<!-- ===== Dibujos de la marca (símbolos reutilizables) ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- Trazo a mano: el borde tiembla un poquito y deja sombra de sticker -->
+    <filter id="f-trazo" x="-12%" y="-12%" width="124%" height="128%" color-interpolation-filters="sRGB">
+      <feTurbulence data-hervor type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feOffset in="d" dx="0" dy="6" result="o"/>
+      <feFlood flood-color="#062F75" flood-opacity=".6"/>
+      <feComposite in2="o" operator="in" result="s"/>
+      <feMerge><feMergeNode in="s"/><feMergeNode in="d"/></feMerge>
+    </filter>
+    <filter id="f-garabato" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB">
+      <feTurbulence data-hervor type="fractalNoise" baseFrequency="0.08" numOctaves="2" seed="5" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="1.7" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <clipPath id="c-juega"><path d="M100 64 C126 58 154 82 178 102 C194 114 206 122 216 128 C234 138 240 164 228 180 C216 192 196 190 184 182 C160 166 136 152 116 148 C98 144 80 126 79 104 C78 84 86 68 100 64Z"/></clipPath>
+    <clipPath id="c-salta"><path d="M98 90 C128 76 178 78 210 88 C234 96 242 116 230 130 C216 140 192 136 170 132 C144 128 118 134 100 130 C82 126 78 98 98 90Z"/></clipPath>
+    <clipPath id="c-asoma"><rect x="-20" y="-40" width="220" height="140"/></clipPath>
+
+    <!-- Dálmata: piezas sueltas para que la cola menee, la cabeza siga la pelota y el ojo parpadee -->
+    <symbol id="p-perro-cola" overflow="visible"><path d="M88 80 C76 62 66 44 50 26 C47 22 52 18 56 22 C72 38 86 58 98 74Z" fill="#F1F5FB" stroke="#021C4C" stroke-width="4" stroke-linejoin="round"/></symbol>
+    <symbol id="p-perro-meneo" overflow="visible"><path d="M34 30 c-7 3 -10 9 -9 15 M24 14 c-9 1 -14 7 -15 13 M62 8 c5 -6 11 -7 17 -5" fill="none" stroke="#F1F5FB" stroke-width="3.5" stroke-linecap="round"/></symbol>
+    <symbol id="p-perro-cuerpo" overflow="visible">
+      <g stroke="#021C4C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path fill="#D3DEEE" d="M118 110 C130 128 132 156 128 176 C127 186 130 196 136 200 C140 204 132 207 122 206 C114 206 112 200 114 192 C112 172 104 150 100 132Z"/>
+        <path fill="#D3DEEE" d="M196 160 C214 166 238 172 258 176 C270 178 274 190 262 192 L210 192 C196 192 190 172 196 160Z"/>
+        <path fill="#F1F5FB" d="M100 64 C126 58 154 82 178 102 C194 114 206 122 216 128 C234 138 240 164 228 180 C216 192 196 190 184 182 C160 166 136 152 116 148 C98 144 80 126 79 104 C78 84 86 68 100 64Z"/>
+      </g>
+      <g clip-path="url(#c-juega)" fill="#021C4C">
+        <ellipse cx="112" cy="86" rx="9" ry="7" transform="rotate(-20 112 86)"/><ellipse cx="146" cy="104" rx="6" ry="5"/>
+        <ellipse cx="170" cy="132" rx="7.5" ry="5.5" transform="rotate(25 170 132)"/><ellipse cx="134" cy="132" rx="4.5" ry="3.5"/>
+        <ellipse cx="96" cy="116" rx="5" ry="4"/><ellipse cx="204" cy="150" rx="5" ry="4"/>
+      </g>
+      <g stroke="#021C4C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path fill="none" stroke-width="3" d="M150 150 c6 4 12 6 18 6"/>
+        <path fill="#F1F5FB" d="M84 104 C104 102 118 122 114 146 C112 160 108 176 110 190 C112 198 118 200 122 204 C118 208 104 208 94 206 C86 205 86 198 90 192 C92 176 86 160 80 148 C72 132 72 112 84 104Z"/>
+        <path fill="none" stroke-width="3" d="M100 206 v-5 M108 207 v-5"/>
+        <path fill="#F1F5FB" d="M190 172 C212 178 240 186 266 192 C282 195 286 208 272 208 L204 208 C186 208 180 186 190 172Z"/>
+        <path fill="none" stroke-width="3" d="M262 208 v-6 M270 207 v-5"/>
+      </g>
+      <ellipse cx="96" cy="166" rx="4" ry="3" fill="#021C4C"/><ellipse cx="236" cy="196" rx="5" ry="3.5" fill="#021C4C"/>
+      <path d="M214 112 C220 128 228 138 240 146" fill="none" stroke="#021C4C" stroke-width="12" stroke-linecap="round"/>
+      <path d="M214 112 C220 128 228 138 240 146" fill="none" stroke="#3ED2BC" stroke-width="6" stroke-linecap="round"/>
+      <g transform="translate(232 152)"><circle r="8" fill="#F1F5FB" stroke="#021C4C" stroke-width="3.5"/><path d="M-1.7 -4.6h3.4v2.9h2.9v3.4h-2.9v2.9h-3.4v-2.9h-2.9v-3.4h2.9z" fill="#3ED2BC" stroke="#021C4C" stroke-width="1"/></g>
+    </symbol>
+    <symbol id="p-perro-cabeza" overflow="visible">
+      <g stroke="#021C4C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path fill="#F1F5FB" d="M218 110 C214 88 232 74 254 76 C272 78 280 90 284 100 C298 102 310 108 311 120 C312 132 300 138 288 138 C274 140 264 148 250 147 C232 146 220 130 218 110Z"/>
+        <path fill="#A9F7F0" stroke-width="3" d="M290 136 C292 148 286 156 280 154 C274 152 274 144 276 137Z"/>
+        <path fill="none" stroke-width="2" d="M281 141 l2 9"/>
+        <path fill="none" d="M306 130 C300 138 290 140 280 136"/>
+        <path fill="#021C4C" d="M232 84 C218 84 210 102 212 122 C213 134 224 138 230 128 C236 116 242 100 244 88 C244 84 238 82 232 84Z"/>
+      </g>
+      <ellipse cx="262" cy="86" rx="5" ry="4" fill="#021C4C"/><circle cx="279" cy="127" r="2" fill="#021C4C"/><circle cx="289" cy="125" r="1.8" fill="#021C4C"/>
+      <path fill="#021C4C" d="M302 114 C308 110 316 113 315 120 C314 126 306 127 302 123 C299 120 299 116 302 114Z"/>
+      <path d="M305 115.5 c2 -1.5 5 -1 6 1" fill="none" stroke="#5B7FB8" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="p-perro-ojo" overflow="visible"><ellipse cx="270" cy="104" rx="5" ry="6" fill="#021C4C"/><circle cx="271.6" cy="101.6" r="1.7" fill="#F1F5FB"/></symbol>
+    <symbol id="p-perro-marcas" overflow="visible"><path d="M290 66 l5 -12 M305 76 l12 -6 M276 62 l-1 -13" fill="none" stroke="#F1F5FB" stroke-width="4" stroke-linecap="round"/></symbol>
+
+    <!-- Dálmata en pleno salto -->
+    <symbol id="p-perro-velocidad" overflow="visible"><path d="M30 104 h-22 M40 120 h-30 M44 88 h-18" fill="none" stroke="#F1F5FB" stroke-width="3.5" stroke-linecap="round"/></symbol>
+    <symbol id="p-perro-salto" overflow="visible">
+      <g stroke="#021C4C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path fill="#F1F5FB" d="M98 94 C82 80 66 70 46 64 C41 63 41 57 46 57 C68 58 88 70 104 86Z"/>
+        <path fill="#D3DEEE" d="M106 102 C90 102 72 98 56 92 C46 88 36 92 40 102 C46 110 66 114 86 116 C96 116 104 114 110 110Z"/>
+        <path fill="#D3DEEE" d="M206 108 C224 114 242 118 258 116 C270 114 276 124 266 130 C250 136 228 132 204 124Z"/>
+        <path fill="#F1F5FB" d="M98 90 C128 76 178 78 210 88 C234 96 242 116 230 130 C216 140 192 136 170 132 C144 128 118 134 100 130 C82 126 78 98 98 90Z"/>
+      </g>
+      <g clip-path="url(#c-salta)" fill="#021C4C">
+        <ellipse cx="118" cy="98" rx="9" ry="6.5" transform="rotate(-10 118 98)"/><ellipse cx="156" cy="94" rx="6" ry="5"/>
+        <ellipse cx="190" cy="114" rx="7" ry="5" transform="rotate(15 190 114)"/><ellipse cx="138" cy="120" rx="4.5" ry="3.5"/>
+      </g>
+      <g stroke="#021C4C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path fill="#F1F5FB" d="M114 110 C100 124 84 136 66 144 C54 149 42 150 32 148 C22 146 22 134 34 134 C48 134 62 128 76 118 C86 110 94 102 102 98Z"/>
+        <path fill="#F1F5FB" d="M212 118 C226 128 236 140 246 150 C254 158 266 160 278 156 C288 154 292 166 282 169 C266 174 248 171 238 163 C226 153 214 141 204 132Z"/>
+      </g>
+      <ellipse cx="70" cy="134" rx="4" ry="3" fill="#021C4C"/><ellipse cx="240" cy="150" rx="4" ry="3" fill="#021C4C"/>
+      <path d="M212 90 C218 104 226 112 238 118" fill="none" stroke="#021C4C" stroke-width="12" stroke-linecap="round"/>
+      <path d="M212 90 C218 104 226 112 238 118" fill="none" stroke="#3ED2BC" stroke-width="6" stroke-linecap="round"/>
+      <g transform="translate(-6 -28)">
+        <path fill="#021C4C" stroke="#021C4C" stroke-width="4" stroke-linejoin="round" d="M238 86 C226 72 208 64 192 66 C184 68 186 78 194 82 C208 88 222 94 236 98Z"/>
+        <use href="#p-perro-cabeza-sola"/>
+      </g>
+    </symbol>
+    <symbol id="p-perro-cabeza-sola" overflow="visible">
+      <g stroke="#021C4C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path fill="#F1F5FB" d="M218 110 C214 88 232 74 254 76 C272 78 280 90 284 100 C298 102 310 108 311 120 C312 132 300 138 288 138 C274 140 264 148 250 147 C232 146 220 130 218 110Z"/>
+        <path fill="#A9F7F0" stroke-width="3" d="M290 136 C292 148 286 156 280 154 C274 152 274 144 276 137Z"/>
+        <path fill="none" d="M306 130 C300 138 290 140 280 136"/>
+      </g>
+      <ellipse cx="262" cy="86" rx="5" ry="4" fill="#021C4C"/>
+      <path fill="#021C4C" d="M302 114 C308 110 316 113 315 120 C314 126 306 127 302 123 C299 120 299 116 302 114Z"/>
+      <ellipse cx="270" cy="104" rx="5" ry="6" fill="#021C4C"/><circle cx="271.6" cy="101.6" r="1.7" fill="#F1F5FB"/>
+    </symbol>
+
+    <!-- Dálmata sentado de frente: te mira, respira, jadea con la lengüita y menea la cola -->
+    <clipPath id="c-sentado"><path d="M96 150 C82 176 76 220 78 262 C79 284 86 300 100 300 L160 300 C174 300 181 284 182 262 C184 220 178 176 164 150Z"/></clipPath>
+    <symbol id="p-sentado-cola" overflow="visible">
+      <path d="M180 302 C210 302 236 284 242 250 C243 242 236 238 231 244 C226 270 206 284 178 286Z" fill="#F1F5FB" stroke="#021C4C" stroke-width="4" stroke-linejoin="round"/>
+      <ellipse cx="236" cy="256" rx="3.5" ry="4.5" fill="#021C4C"/><ellipse cx="214" cy="284" rx="4" ry="3" fill="#021C4C"/>
+    </symbol>
+    <symbol id="p-sentado-meneo" overflow="visible"><path d="M250 226 c6 -4 8 -10 6 -16 M258 254 c7 0 12 -4 14 -9" fill="none" stroke="#F1F5FB" stroke-width="3.5" stroke-linecap="round"/></symbol>
+    <symbol id="p-sentado-ancas" overflow="visible">
+      <g fill="#F1F5FB" stroke="#021C4C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M98 224 C72 220 44 240 42 268 C40 288 52 300 72 300 L104 300 C104 272 104 246 98 224Z"/>
+        <path d="M162 224 C188 220 216 240 218 268 C220 288 208 300 188 300 L156 300 C156 272 156 246 162 224Z"/>
+      </g>
+      <ellipse cx="64" cy="258" rx="7" ry="5" transform="rotate(20 64 258)" fill="#021C4C"/><ellipse cx="200" cy="264" rx="5" ry="4" fill="#021C4C"/>
+      <g fill="#F1F5FB" stroke="#021C4C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M42 302 C34 302 32 292 40 289 C50 285 70 285 80 291 C86 295 84 302 76 302Z"/>
+        <path d="M218 302 C226 302 228 292 220 289 C210 285 190 285 180 291 C174 295 176 302 184 302Z"/>
+        <path fill="none" stroke-width="3" d="M56 302 v-5 M66 302 v-5 M194 302 v-5 M204 302 v-5"/>
+      </g>
+    </symbol>
+    <symbol id="p-sentado-pecho" overflow="visible">
+      <path fill="#F1F5FB" stroke="#021C4C" stroke-width="4" stroke-linejoin="round" d="M96 150 C82 176 76 220 78 262 C79 284 86 300 100 300 L160 300 C174 300 181 284 182 262 C184 220 178 176 164 150Z"/>
+      <g clip-path="url(#c-sentado)" fill="#021C4C">
+        <ellipse cx="108" cy="184" rx="7" ry="5" transform="rotate(-15 108 184)"/><ellipse cx="156" cy="196" rx="6" ry="5"/>
+        <ellipse cx="90" cy="238" rx="5" ry="4"/><ellipse cx="172" cy="244" rx="6" ry="4.5"/>
+      </g>
+      <path d="M116 196 c4 5 9 5 14 0 c5 5 10 5 14 0" fill="none" stroke="#021C4C" stroke-width="3" stroke-linecap="round"/>
+      <path fill="#F1F5FB" d="M102 218 C100 248 100 274 102 294 C103 304 126 304 127 294 C128 272 128 246 126 218Z M158 218 C160 248 160 274 158 294 C157 304 134 304 133 294 C132 272 132 246 134 218Z"/>
+      <g fill="none" stroke="#021C4C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M102 222 C100 248 100 274 102 294 C103 304 126 304 127 294 C128 272 128 248 126 222"/>
+        <path d="M158 222 C160 248 160 274 158 294 C157 304 134 304 133 294 C132 272 132 248 134 222"/>
+        <path stroke-width="3" d="M110 302 v-6 M118 302 v-6 M142 302 v-6 M150 302 v-6"/>
+      </g>
+      <ellipse cx="114" cy="262" rx="4" ry="3" fill="#021C4C"/><ellipse cx="148" cy="278" rx="4.5" ry="3.5" fill="#021C4C"/>
+      <path d="M94 158 C112 170 148 170 166 158" fill="none" stroke="#021C4C" stroke-width="12" stroke-linecap="round"/>
+      <path d="M94 158 C112 170 148 170 166 158" fill="none" stroke="#3ED2BC" stroke-width="6" stroke-linecap="round"/>
+      <g transform="translate(130 177)"><circle r="8.5" fill="#F1F5FB" stroke="#021C4C" stroke-width="3.5"/><path d="M-1.7 -4.6h3.4v2.9h2.9v3.4h-2.9v2.9h-3.4v-2.9h-2.9v-3.4h2.9z" fill="#3ED2BC" stroke="#021C4C" stroke-width="1"/></g>
+    </symbol>
+    <symbol id="p-sentado-cara" overflow="visible">
+      <g stroke="#021C4C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path fill="#021C4C" d="M90 56 C62 52 42 78 44 110 C45 128 58 138 70 130 C80 122 86 100 96 70Z"/>
+        <path fill="#F1F5FB" d="M170 56 C198 52 218 78 216 110 C215 128 202 138 190 130 C180 122 174 100 164 70Z"/>
+        <path fill="#F1F5FB" d="M130 38 C168 38 190 62 190 98 C190 134 166 158 130 158 C94 158 70 134 70 98 C70 62 92 38 130 38Z"/>
+      </g>
+      <ellipse cx="202" cy="104" rx="4.5" ry="6.5" fill="#021C4C"/>
+      <ellipse cx="160" cy="62" rx="6.5" ry="4.5" transform="rotate(-12 160 62)" fill="#021C4C"/><ellipse cx="98" cy="62" rx="3.5" ry="3" fill="#021C4C"/>
+      <circle cx="90" cy="118" r="2.4" fill="#021C4C"/><circle cx="95" cy="127" r="2" fill="#021C4C"/><circle cx="170" cy="118" r="2.4" fill="#021C4C"/><circle cx="165" cy="127" r="2" fill="#021C4C"/>
+      <path fill="#021C4C" d="M120 109 C120 102 140 102 140 109 C140 116 134 120 130 120 C126 120 120 116 120 109Z"/>
+      <path d="M124 106.5 c3 -2 7 -2 9 0" fill="none" stroke="#5B7FB8" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="p-sentado-lengua" overflow="visible">
+      <path d="M122 127 C120 141 124 152 130 152 C136 152 140 141 138 127Z" fill="#A9F7F0" stroke="#021C4C" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M130 131 v11" fill="none" stroke="#021C4C" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="p-sentado-boca" overflow="visible"><path d="M130 120 v6 M114 123 C118 132 126 132 130 126 C134 132 142 132 146 123" fill="none" stroke="#021C4C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="p-sentado-ojos" overflow="visible"><ellipse cx="106" cy="92" rx="7" ry="8.5" fill="#021C4C"/><ellipse cx="154" cy="92" rx="7" ry="8.5" fill="#021C4C"/><circle cx="108.6" cy="88.6" r="2.4" fill="#F1F5FB"/><circle cx="156.6" cy="88.6" r="2.4" fill="#F1F5FB"/></symbol>
+
+    <!-- Gata: vigila desde las letras -->
+    <symbol id="p-gata-cola" overflow="visible"><path d="M32 138 C12 142 8 162 16 180 C20 190 14 198 7 195" fill="none" stroke="#021C4C" stroke-width="9" stroke-linecap="round"/></symbol>
+    <symbol id="p-gata-cuerpo" overflow="visible">
+      <g fill="#021C4C" stroke="#021C4C" stroke-width="4" stroke-linejoin="round">
+        <path d="M60 56 C42 56 32 74 32 96 C32 116 28 130 24 144 L96 144 C92 130 88 116 88 96 C88 74 78 56 60 56Z"/>
+        <path d="M34 30 C32 18 32 8 34 2 C42 6 50 12 56 18Z M86 30 C88 18 88 8 86 2 C78 6 70 12 64 18Z"/>
+      </g>
+      <path d="M50 108 V141 M70 108 V141" stroke="#F1F5FB" stroke-opacity=".5" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M28 144 c4 -6 14 -6 18 0 M52 144 c4 -6 14 -6 18 0" fill="none" stroke="#F1F5FB" stroke-opacity=".5" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M37 22 L37 9 L48 17 M83 22 L83 9 L72 17" fill="none" stroke="#3ED2BC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="60" cy="40" rx="31" ry="26" fill="#021C4C"/>
+      <path d="M57 47 h6 l-3 3.4z" fill="#A9F7F0" stroke="#A9F7F0" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M54 53 q3 3.5 6 0 q3 3.5 6 0" fill="none" stroke="#F1F5FB" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M42 48 L18 45 M42 52 L19 56 M78 48 L102 45 M78 52 L101 56" stroke="#F1F5FB" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="p-gata-ojos" overflow="visible"><path d="M40 38 C42 32 52 32 54 38 C52 44 42 44 40 38Z M66 38 C68 32 78 32 80 38 C78 44 68 44 66 38Z" fill="#F1F5FB"/></symbol>
+    <symbol id="p-gata-pupilas" overflow="visible"><circle cx="47" cy="38" r="4" fill="#3ED2BC"/><circle cx="73" cy="38" r="4" fill="#0882E8"/><ellipse cx="47" cy="38" rx="1.4" ry="3.4" fill="#021C4C"/><ellipse cx="73" cy="38" rx="1.4" ry="3.4" fill="#021C4C"/></symbol>
+    <symbol id="p-gata-dormida" overflow="visible">
+      <g style="fill:var(--gata,#021C4C);stroke:var(--gata-borde,#021C4C)" stroke-width="4" stroke-linejoin="round">
+        <path d="M30 104 C22 74 46 50 88 48 C130 46 166 62 170 90 C172 104 160 110 140 110 L44 110 C36 110 32 108 30 104Z"/>
+        <path d="M40 66 L34 40 L56 54Z M76 54 L82 30 L94 54Z"/>
+      </g>
+      <path d="M168 96 C176 108 160 116 130 114 C100 112 80 112 66 114" fill="none" style="stroke:var(--gata-borde,#021C4C)" stroke-width="12" stroke-linecap="round"/>
+      <path d="M168 96 C176 108 160 116 130 114 C100 112 80 112 66 114" fill="none" style="stroke:var(--gata,#021C4C)" stroke-width="6" stroke-linecap="round"/>
+      <ellipse cx="64" cy="76" rx="32" ry="26" style="fill:var(--gata,#021C4C)"/>
+      <path d="M46 76 q6 5 12 0 M70 76 q6 5 12 0" fill="none" stroke="#F1F5FB" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M61 86 h6 l-3 3z" fill="#A9F7F0" stroke="#A9F7F0" stroke-width="1.4" stroke-linejoin="round"/>
+      <path d="M40 88 l-18 2 M88 88 l18 2" stroke="#F1F5FB" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- La pelota: menta, con la cruz de la clínica -->
+    <symbol id="p-bola" viewBox="0 0 100 100" overflow="visible">
+      <circle cx="50" cy="50" r="44" fill="#3ED2BC" stroke="#021C4C" stroke-width="6"/>
+      <path d="M22 26 C34 40 34 60 22 76 M78 24 C66 40 66 60 78 76" fill="none" stroke="#021C4C" stroke-width="4" stroke-linecap="round"/>
+      <path d="M43 36h14v9h9v14h-9v9H43v-9h-9V45h9z" fill="#F1F5FB" stroke="#021C4C" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M26 38 C28 30 33 24 41 20" fill="none" stroke="#A9F7F0" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Íconos dibujados con el mismo trazo -->
+    <symbol id="i-esteto" viewBox="0 0 64 64"><g fill="none" stroke="#021C4C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8 h-3 M46 8 h3"/><path d="M17 8 V22 C17 31 24 36 32 36 C40 36 47 31 47 22 V8"/><path d="M32 36 V44 C32 52 38 56 44 54"/><circle cx="48" cy="48" r="7" fill="#3ED2BC"/></g></symbol>
+    <symbol id="i-jeringa" viewBox="0 0 64 64"><g fill="none" stroke="#021C4C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-45 32 32)"><rect x="18" y="25" width="26" height="14" rx="3" fill="#3ED2BC"/><path d="M44 32 h8 M52 24 v16 M18 32 h-10 M25 25 v6 M31 25 v6 M37 25 v6"/></g></symbol>
+    <symbol id="i-tijeras" viewBox="0 0 64 64"><g fill="none" stroke="#021C4C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="47" r="7"/><circle cx="29" cy="53" r="7" fill="#3ED2BC"/><path d="M20 42 L55 18 M33 47 L51 9"/><circle cx="42" cy="26.5" r="1.6" fill="#021C4C"/></g></symbol>
+    <symbol id="i-casa" viewBox="0 0 64 64"><g fill="none" stroke="#021C4C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 32 L32 11 L56 32"/><path d="M15 27 V54 H49 V27"/><path d="M27 54 V42 h10 v12" fill="#3ED2BC"/><path d="M40 33 c-2 -3 -6 -1 -4 2 l4 4 l4 -4 c2 -3 -2 -5 -4 -2z" fill="#021C4C" stroke-width="1.5"/></g></symbol>
+    <symbol id="i-van" viewBox="0 0 64 64"><g fill="none" stroke="#021C4C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 44 V20 C10 18 12 16 14 16 H40 L52 28 L56 30 V44 H10Z"/><path d="M40 16 V28 H52"/><path d="M24 22 v12 M18 28 h12" stroke="#3ED2BC" stroke-width="3.5"/><circle cx="20" cy="46" r="5" fill="#3ED2BC"/><circle cx="46" cy="46" r="5" fill="#3ED2BC"/></g></symbol>
+    <symbol id="i-corazon" viewBox="0 0 64 64"><g fill="none" stroke="#021C4C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 54 C12 40 6 26 14 16 C20 9 30 12 32 20 C34 12 44 9 50 16 C58 26 52 40 32 54Z"/><path d="M28 22 h8 v6 h6 v8 h-6 v6 h-8 v-6 h-6 v-8 h6z" fill="#3ED2BC" stroke-width="2.5"/></g></symbol>
+    <symbol id="i-luna" viewBox="0 0 80 80"><path d="M52 10 C34 12 20 28 20 46 C20 62 34 74 52 72 C40 66 32 54 32 40 C32 26 40 16 52 10Z" fill="#A9F7F0" stroke="#021C4C" stroke-width="3" stroke-linejoin="round"/></symbol>
+
+    <!-- Garabatos sueltos -->
+    <symbol id="g-cruz" viewBox="0 0 40 40"><path d="M20 5 v30 M5 20 h30" fill="none" stroke="#3ED2BC" stroke-width="6.5" stroke-linecap="round"/></symbol>
+    <symbol id="g-corazon" viewBox="0 0 40 40"><path d="M20 34 C6 25 3 15 8 9 C12 5 18 7 20 12 C22 7 28 5 32 9 C37 15 34 25 20 34Z" fill="none" stroke="#F1F5FB" stroke-width="3.5" stroke-linejoin="round"/></symbol>
+    <symbol id="g-aro" viewBox="0 0 40 40"><circle cx="20" cy="20" r="12" fill="none" stroke="#A9F7F0" stroke-width="3.5"/></symbol>
+    <symbol id="g-hueso" viewBox="0 0 60 30"><path d="M12 9 c-6 -7 4 -12 8 -5 h20 c4 -7 14 -2 8 5 c6 7 -4 12 -8 5 h-20 c-4 7 -14 2 -8 -5z" fill="none" stroke="#F1F5FB" stroke-width="3.2" stroke-linejoin="round" transform="translate(0 6)"/></symbol>
+    <symbol id="g-chispas" viewBox="0 0 40 40"><path d="M8 10 l5 9 M22 4 l-1 11 M35 14 l-9 5" fill="none" stroke="#F1F5FB" stroke-width="3.5" stroke-linecap="round"/></symbol>
+    <symbol id="g-huella" viewBox="0 0 64 64"><g fill="#F1F5FB" fill-opacity=".3"><path d="M32 34 C22 34 16 44 18 50 C20 56 28 54 32 54 C36 54 44 56 46 50 C48 44 42 34 32 34Z"/><ellipse cx="16" cy="28" rx="5" ry="7"/><ellipse cx="26" cy="16" rx="5" ry="7"/><ellipse cx="38" cy="16" rx="5" ry="7"/><ellipse cx="48" cy="28" rx="5" ry="7"/></g></symbol>
+    <symbol id="g-mancha" viewBox="0 0 80 64"><path d="M14 30 C10 14 26 4 44 6 C62 8 76 18 72 36 C68 54 50 60 32 58 C18 56 16 44 14 30Z" fill="currentColor" style="stroke:var(--borde-mancha,#021C4C);stroke-dasharray:var(--raya-mancha,none)" stroke-width="3" stroke-linejoin="round"/></symbol>
+
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.6 3.5H9l1.4 4.1-2 1.4a11 11 0 0 0 6.1 6.1l1.4-2 4.1 1.4v2.4a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z"/></symbol>
+  </defs>
+</svg>
+
+<!-- ===== Portada (inicio) ===== -->
+<header class="nav">
+  <a class="nav__logo" href="#inicio" aria-label="Pets &amp; Health, inicio" data-pieza data-logo><img src="img/logo/logo.svg" alt="Pets &amp; Health" width="990" height="530"></a>
+  <div class="nav__acciones">
+    <a class="nav__urgencia" href="tel:+50622534184" data-pieza data-urgencia><span>Emergencias</span> <b>24/7</b></a>
+    <a class="nav__wa" href="https://wa.me/50689101055?text=Hola%20Pets%20%26%20Health%2C%20tengo%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp" data-pieza data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="portada" data-portada aria-label="Portada">
+
+  <svg class="estela" data-estela aria-hidden="true" focusable="false"><path d=""/></svg>
+
+  <h1 class="titulo">
+    <span class="titulo__linea" data-pieza data-linea>El lugar favorito de tus</span>
+    <span class="titulo__aire" aria-hidden="true"></span>
+    <span class="gigante" data-gigante>
+      <span class="sr">peluditos.</span>
+      <span class="gigante__texto" data-palabra data-pieza aria-hidden="true">peluditos</span><i class="bola" data-bola data-pieza aria-hidden="true"><svg viewBox="0 0 100 100"><g filter="url(#f-trazo)"><g data-giro><use href="#p-bola" width="100" height="100"/></g></g></svg></i>
+
+      <!-- La gata, sentada en la «l» -->
+      <span class="gata" data-gata data-pieza aria-hidden="true">
+        <svg viewBox="0 0 120 200"><g filter="url(#f-trazo)">
+          <use href="#p-gata-cola" data-cola-gata/>
+          <use href="#p-gata-cuerpo"/>
+          <g data-ojos-gata><use href="#p-gata-ojos"/><use href="#p-gata-pupilas" data-pupilas/></g>
+        </g></svg>
+      </span>
+
+      <!-- El dálmata: llega saltando y se queda jugando sobre «itos» -->
+      <span class="perro" data-perro data-pieza aria-hidden="true">
+        <svg class="perro__juega" data-reverencia viewBox="0 0 320 220"><g filter="url(#f-trazo)">
+          <use href="#p-perro-meneo" data-meneo opacity="0"/>
+          <use href="#p-perro-cola" data-cola/>
+          <use href="#p-perro-cuerpo"/>
+          <g data-cabeza><use href="#p-perro-cabeza"/><use href="#p-perro-ojo" data-ojo/></g>
+          <use href="#p-perro-marcas" data-marcas opacity="0"/>
+        </g></svg>
+        <svg class="perro__salto" data-salto viewBox="0 0 320 220"><g filter="url(#f-trazo)">
+          <use href="#p-perro-velocidad" data-velocidad/>
+          <use href="#p-perro-salto"/>
+        </g></svg>
+        <svg class="globo" data-globo viewBox="0 0 130 80"><g filter="url(#f-garabato)">
+          <path d="M14 34 C12 14 40 6 66 8 C96 10 120 16 118 36 C116 54 92 60 64 58 C54 58 46 57 38 55 L22 70 L26 52 C18 48 14 42 14 34Z" fill="#F1F5FB" stroke="#021C4C" stroke-width="4" stroke-linejoin="round"/>
+          <text x="66" y="42" text-anchor="middle" font-family="Gabarito, sans-serif" font-weight="900" font-size="25" fill="#021C4C">¡Guau!</text>
+        </g></svg>
+      </span>
+
+      <!-- Y se sienta de frente a mirarte: respira, jadea y menea la cola -->
+      <span class="sentado" data-sentado data-pieza aria-hidden="true">
+        <svg viewBox="0 0 260 320" data-sentado-dibujo><g filter="url(#f-trazo)">
+          <g data-cola-s-lenta><g data-cola-s><use href="#p-sentado-cola"/></g></g>
+          <use href="#p-sentado-meneo" data-meneo-s opacity="0"/>
+          <use href="#p-sentado-ancas"/>
+          <g data-respira>
+            <use href="#p-sentado-pecho"/>
+            <g data-cabeza-s>
+              <use href="#p-sentado-cara"/>
+              <g data-lengua><use href="#p-sentado-lengua"/></g>
+              <use href="#p-sentado-boca"/>
+              <g data-mira><g data-ojos-s><use href="#p-sentado-ojos"/></g></g>
+            </g>
+          </g>
+        </g></svg>
+        <svg class="globo" data-globo-s viewBox="0 0 130 80"><g filter="url(#f-garabato)">
+          <path d="M116 34 C118 14 90 6 64 8 C34 10 10 16 12 36 C14 54 38 60 66 58 C76 58 84 57 92 55 L108 70 L104 52 C112 48 116 42 116 34Z" fill="#F1F5FB" stroke="#021C4C" stroke-width="4" stroke-linejoin="round"/>
+          <text x="64" y="42" text-anchor="middle" font-family="Gabarito, sans-serif" font-weight="900" font-size="25" fill="#021C4C">¡Guau!</text>
+        </g></svg>
+      </span>
+    </span>
+  </h1>
+
+  <div class="portada__pie">
+    <p class="portada__sub" data-pieza data-sub>Centro de Atención Veterinaria en San Pedro. <b>Salud, estética y nutrición</b> en un solo lugar, con emergencias 24/7.</p>
+    <div class="portada__acciones">
+      <a class="boton" data-cta data-pieza href="https://wa.me/50689101055?text=Hola%20Pets%20%26%20Health%2C%20quiero%20agendar%20una%20cita%20para%20mi%20peludito." target="_blank" rel="noopener"><span class="boton__icono" aria-hidden="true"><svg viewBox="0 0 26 16"><path d="M1 8h6l2-5 4 10 3-7 2 2h7"/></svg></span>Agendá tu cita</a>
+      <a class="tel" href="tel:+50622534184" data-pieza data-tel>¿Emergencia? <b>2253-4184</b></a>
+    </div>
+  </div>
+
+  <div class="decor" data-decor data-pieza aria-hidden="true">
+    <svg class="garabato d1" style="--t:30px"><g filter="url(#f-garabato)"><use href="#g-cruz" width="100%" height="100%"/></g></svg>
+    <svg class="garabato d2" style="--t:34px"><g filter="url(#f-garabato)"><use href="#g-corazon" width="100%" height="100%"/></g></svg>
+    <svg class="garabato d3" style="--t:22px"><g filter="url(#f-garabato)"><use href="#g-aro" width="100%" height="100%"/></g></svg>
+    <svg class="garabato d4" style="--t:52px;height:26px"><g filter="url(#f-garabato)"><use href="#g-hueso" width="100%" height="100%"/></g></svg>
+    <svg class="garabato d5" style="--t:46px"><g filter="url(#f-garabato)"><use href="#g-huella" width="100%" height="100%"/></g></svg>
+    <svg class="garabato d6" style="--t:26px"><g filter="url(#f-garabato)"><use href="#g-cruz" width="100%" height="100%"/></g></svg>
+  </div>
+</section>
+<!-- ===== Fin portada ===== -->
+
+<p class="muestra__controles">
+  <button type="button" class="repetir" data-ver-de-nuevo>Ver de nuevo</button>
+  <span class="muestra__nota" data-aviso-rm hidden>Tenés activado «Reducir movimiento»: ves una versión sin desplazamientos.</span>
+  <span class="muestra__nota">Tocá al dálmata · Hoja de muestra 4, no se publica</span>
+</p>
+
+<!-- ===== La idea ===== -->
+<section class="bloque" aria-labelledby="t-idea">
+  <div class="bloque__in idea">
+    <h2 class="h2" id="t-idea" data-split>Tu marca, dibujada a mano</h2>
+    <div>
+      <p class="lead" data-reveal>El azul rey de «El segundo hogar» ahora es el cielo de toda la página. Encima juegan peluditos dibujados a mano: un dálmata que persigue la pelota y una gata que vigila todo desde las letras. No son fotos de banco: son personajes que solo tiene Pets &amp; Health.</p>
+      <ul class="chips" data-reveal>
+        <li><svg aria-hidden="true"><use href="#i-corazon"/></svg>Dibujos propios</li>
+        <li><svg aria-hidden="true"><use href="#i-esteto"/></svg>Tus mismos colores</li>
+        <li><svg aria-hidden="true"><use href="#i-casa"/></svg>Se mueve como caricatura</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<svg class="raya" viewBox="0 0 260 22" aria-hidden="true" data-raya><g filter="url(#f-garabato)"><path pathLength="1" d="M4 12 C30 2 50 20 76 11 S122 3 146 12 S196 20 220 9 S250 8 256 12"/></g></svg>
+
+<!-- ===== Paleta ===== -->
+<section class="bloque" aria-labelledby="t-paleta">
+  <div class="bloque__in">
+    <h2 class="h2" id="t-paleta" data-split>Tus colores, ahora de día</h2>
+    <p class="lead" data-reveal>Los mismos de la propuesta 3, con otro reparto: el azul rey manda, el marino dibuja y el menta sigue siendo lo que se toca.</p>
+    <ul class="manchas">
+      <li class="mancha" data-reveal><svg aria-hidden="true" style="color:#0668D0;--borde-mancha:#F1F5FB;--raya-mancha:6 6"><use href="#g-mancha"/></svg><span class="mancha__nombre">Azul rey <small>#0668D0</small></span><span class="mancha__papel">El fondo de toda la página: el azul de «El segundo hogar».</span></li>
+      <li class="mancha" data-reveal><svg aria-hidden="true" style="color:#F1F5FB"><use href="#g-mancha"/></svg><span class="mancha__nombre">Hielo <small>#F1F5FB</small></span><span class="mancha__papel">Los peluditos, los títulos y las tarjetas.</span></li>
+      <li class="mancha" data-reveal><svg aria-hidden="true" style="color:#021C4C"><use href="#g-mancha"/></svg><span class="mancha__nombre">Marino <small>#021C4C</small></span><span class="mancha__papel">El trazo de cada dibujo, la letra sobre claro y la noche de Emergencias.</span></li>
+      <li class="mancha" data-reveal><svg aria-hidden="true" style="color:#3ED2BC"><use href="#g-mancha"/></svg><span class="mancha__nombre">Menta <small>#3ED2BC</small></span><span class="mancha__papel">La pelota y el botón: si es menta, se toca.</span></li>
+      <li class="mancha" data-reveal><svg aria-hidden="true" style="color:#A9F7F0"><use href="#g-mancha"/></svg><span class="mancha__nombre">Menta clara <small>#A9F7F0</small></span><span class="mancha__papel">Brillos, lengüitas y la luna.</span></li>
+      <li class="mancha" data-reveal><svg aria-hidden="true" style="color:#0882E8"><use href="#g-mancha"/></svg><span class="mancha__nombre">Azul clínico <small>#0882E8</small></span><span class="mancha__papel">Un ojo de la gata y los subrayados sobre claro.</span></li>
+      <li class="mancha" data-reveal><svg aria-hidden="true" style="color:#062F75"><use href="#g-mancha"/></svg><span class="mancha__nombre">Hondo <small>#062F75</small></span><span class="mancha__papel">La sombra de los dibujos y las tarjetas, como stickers pegados.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== Letras ===== -->
+<section class="bloque" aria-labelledby="t-letras" style="padding-top:0">
+  <div class="bloque__in">
+    <h2 class="h2" id="t-letras" data-split>La misma letra, con ganas de jugar</h2>
+    <div class="letras">
+      <div class="letra letra--grande" data-reveal>
+        <p class="muestra-display">Salud de pies a <span class="subrayado">patitas<svg viewBox="0 0 200 30" preserveAspectRatio="none" aria-hidden="true" data-subrayado><path pathLength="1" d="M4 18 C40 8 70 26 104 16 S168 8 196 16"/></svg></span><i class="bola" aria-hidden="true"><svg viewBox="0 0 100 100"><g filter="url(#f-trazo)"><use href="#p-bola" width="100" height="100"/></g></svg></i></p>
+        <p class="letra__nota">Gabarito muy negra para los titulares. Las letras saltan a su lugar, un garabato menta subraya la palabra que importa y la pelota hace de punto.</p>
+      </div>
+      <div class="letra" data-reveal>
+        <p class="muestra-h2">El segundo hogar de tu mascota</p>
+        <p class="letra__nota">La misma letra para los títulos de sección.</p>
+      </div>
+      <div class="letra" data-reveal>
+        <p class="muestra-p">Mientras vos trabajás o te vas de vacaciones, tu peludito se queda en Canino Real: un ambiente seguro, con juegos, mimos y un veterinario siempre cerca.</p>
+        <p class="letra__nota">Y para leer, blanca sobre el azul rey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== El elenco ===== -->
+<section class="bloque" aria-labelledby="t-elenco" style="padding-top:0">
+  <div class="bloque__in">
+    <h2 class="h2" id="t-elenco" data-split>Los de la casa</h2>
+    <p class="lead" data-reveal>Dos personajes dibujados para Pets &amp; Health: el dálmata sale de la foto que te gustó en la propuesta 3 y la gata, del michi de ojos de dos colores.</p>
+    <ul class="elenco">
+      <li class="personaje" data-reveal>
+        <svg viewBox="0 0 320 220" aria-hidden="true"><g filter="url(#f-trazo)"><use href="#p-perro-cola" class="cola-css"/><use href="#p-perro-cuerpo"/><use href="#p-perro-cabeza"/><use href="#p-perro-ojo"/></g></svg>
+        <div><b>Juega</b><span>Sobre el titular, con la pelota</span></div>
+      </li>
+      <li class="personaje" data-reveal>
+        <svg viewBox="0 0 320 220" aria-hidden="true"><g filter="url(#f-trazo)"><use href="#p-perro-velocidad"/><use href="#p-perro-salto"/></g></svg>
+        <div><b>Corre</b><span>Detrás de la pelota, al abrir</span></div>
+      </li>
+      <li class="personaje personaje--gata" data-reveal>
+        <svg viewBox="0 0 120 210" aria-hidden="true"><g filter="url(#f-trazo)"><rect x="46" y="144" width="28" height="64" rx="6" fill="#F1F5FB" stroke="#021C4C" stroke-width="4"/><use href="#p-gata-cola"/><use href="#p-gata-cuerpo"/><use href="#p-gata-ojos"/><use href="#p-gata-pupilas"/></g></svg>
+        <div><b>Vigila</b><span>Sentada en las letras, sigue la pelota con los ojos</span></div>
+      </li>
+      <li class="personaje" data-reveal>
+        <svg viewBox="0 0 200 120" aria-hidden="true"><g filter="url(#f-trazo)"><use href="#p-gata-dormida"/></g></svg>
+        <div><b>Duerme</b><span>De noche, en Emergencias 24/7</span></div>
+      </li>
+    </ul>
+
+    <div class="iconos claro" data-reveal>
+      <h3>Íconos con el mismo trazo</h3>
+      <ul>
+        <li><svg aria-hidden="true"><g filter="url(#f-garabato)"><use href="#i-esteto" width="100%" height="100%"/></g></svg>Consulta</li>
+        <li><svg aria-hidden="true"><g filter="url(#f-garabato)"><use href="#i-jeringa" width="100%" height="100%"/></g></svg>Vacunas</li>
+        <li><svg aria-hidden="true"><g filter="url(#f-garabato)"><use href="#i-tijeras" width="100%" height="100%"/></g></svg>Estética</li>
+        <li><svg aria-hidden="true"><g filter="url(#f-garabato)"><use href="#i-casa" width="100%" height="100%"/></g></svg>Hotel</li>
+        <li><svg aria-hidden="true"><g filter="url(#f-garabato)"><use href="#i-van" width="100%" height="100%"/></g></svg>Transporte</li>
+        <li><svg aria-hidden="true"><g filter="url(#f-garabato)"><use href="#i-corazon" width="100%" height="100%"/></g></svg>Emergencias</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Foto real con garabatos ===== -->
+<section class="bloque" aria-labelledby="t-foto" style="padding-top:0">
+  <div class="bloque__in foto">
+    <div>
+      <h2 class="h2" id="t-foto" data-split>¿Una foto real? Con garabatos</h2>
+      <p class="lead" data-reveal>Si alguna foto de tus pacientes sirve, va recortada sobre un círculo claro, con la cabeza saliéndose del borde y garabatos encima. Así convive con los dibujos y no parece de banco.</p>
+    </div>
+    <div class="pegatina" data-pegatina>
+      <span class="pegatina__fondo" aria-hidden="true"></span>
+      <span class="pegatina__foto"><img src="img/gato-recorte.webp" width="641" height="780" alt="Gato naranja con un ojo azul y otro ámbar (foto provisional)" loading="lazy"></span>
+      <svg class="pegatina__garabatos" viewBox="0 0 100 100" aria-hidden="true"><g filter="url(#f-garabato)">
+        <path data-dibuja pathLength="1" d="M2 52 C0 20 24 -3 50 -4 C76 -5 100 20 98 52" stroke="#F1F5FB" stroke-width="1" stroke-dasharray=".02 .03"/>
+        <path data-dibuja pathLength="1" d="M95 8 C91 3 85 6 88 11 L93 16 L98 11 C101 6 97 3 95 8Z" stroke="#3ED2BC" stroke-width="1.3"/>
+        <path data-dibuja pathLength="1" d="M13 22 l3 5 M20 15 l0 5.5 M8 30 l5 1" stroke="#F1F5FB" stroke-width="1.3"/>
+        <path data-dibuja pathLength="1" d="M90 64 l6 0 M88 70 l5 3 M89 58 l5 -3" stroke="#A9F7F0" stroke-width="1.3"/>
+        <path data-dibuja pathLength="1" d="M6 70 v8 M2 74 h8" stroke="#3ED2BC" stroke-width="1.6"/>
+      </g></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===== La pelota que late ===== -->
+<section class="bloque" aria-labelledby="t-latido" style="padding-top:0">
+  <div class="bloque__in movimiento">
+    <div>
+      <h2 class="h2" id="t-latido" data-split>La pelota que late</h2>
+      <p class="lead" data-reveal>Cada pocos segundos la pelota del titular rebota dos veces, como un latido, y el botón late con ella. Lo que deja dibujado al rebotar es la línea del monitor.</p>
+      <button type="button" class="ver" data-ver-latido>Ver cómo se mueve</button>
+    </div>
+    <div class="lienzo" aria-hidden="true" data-lienzo>
+      <svg viewBox="0 0 600 220">
+        <path class="lienzo__piso" d="M20 178 H580"/>
+        <path class="lienzo__estela" data-lienzo-estela d=""/>
+        <g data-lienzo-bola transform="translate(40 156)"><svg x="-22" y="-22" width="44" height="44" viewBox="0 0 100 100" overflow="visible"><g filter="url(#f-trazo)"><use data-lienzo-giro href="#p-bola" width="100" height="100"/></g></svg></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Botón y tarjetas ===== -->
+<section class="bloque" aria-labelledby="t-boton" style="padding-top:0">
+  <div class="bloque__in">
+    <h2 class="h2" id="t-boton" data-split>El botón y las tarjetas</h2>
+    <p class="lead" data-reveal>Menta con letra marino, borde dibujado y sombra de sticker. Al tocarlo se hunde, como apretar un juguete. Siempre dice lo mismo: Agendá.</p>
+    <div class="botones" data-reveal>
+      <a class="boton" href="https://wa.me/50689101055?text=Hola%20Pets%20%26%20Health%2C%20quiero%20agendar%20una%20cita." target="_blank" rel="noopener"><span class="boton__icono" aria-hidden="true"><svg viewBox="0 0 26 16"><path d="M1 8h6l2-5 4 10 3-7 2 2h7"/></svg></span>Agendá tu cita</a>
+      <a class="boton boton--contorno boton--chico" href="tel:+50622534184"><span class="boton__icono" aria-hidden="true"><svg viewBox="0 0 24 24" class="icono-tel"><use href="#i-tel"/></svg></span>Llamar ahora</a>
+    </div>
+
+    <div class="tarjetas">
+      <article class="tarjeta tarjeta--clara claro" data-reveal>
+        <svg class="tarjeta__asoma" viewBox="0 0 170 110" aria-hidden="true"><g filter="url(#f-trazo)">
+          <g clip-path="url(#c-asoma)"><g class="cabeza-css"><g transform="translate(-176 -50)"><use href="#p-perro-cabeza"/><use href="#p-perro-ojo"/></g></g></g>
+          <g stroke="#021C4C" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M44 92 C44 84 68 84 70 92 L70 104 C70 112 44 112 44 104Z" fill="#F1F5FB"/>
+            <path d="M92 92 C92 84 116 84 118 92 L118 104 C118 112 92 112 92 104Z" fill="#F1F5FB"/>
+            <path d="M53 104 v5 M61 104 v5 M101 104 v5 M109 104 v5" fill="none" stroke-width="3"/>
+          </g>
+        </g></svg>
+        <span class="tarjeta__icono" aria-hidden="true"><svg><g filter="url(#f-garabato)"><use href="#i-esteto" width="100%" height="100%"/></g></svg></span>
+        <h3>Consulta y vacunación</h3>
+        <p>Revisión general, vacunas y desparasitación. Las vacunas también te las ponemos a domicilio.</p>
+        <a class="boton boton--chico" href="https://wa.me/50689101055?text=Hola%20Pets%20%26%20Health%2C%20quiero%20agendar%20una%20consulta%20y%20vacunaci%C3%B3n%20para%20mi%20peludito." target="_blank" rel="noopener"><span class="boton__icono" aria-hidden="true"><svg viewBox="0 0 26 16"><path d="M1 8h6l2-5 4 10 3-7 2 2h7"/></svg></span>Agendá consulta</a>
+      </article>
+
+      <article class="tarjeta tarjeta--noche" data-reveal>
+        <div class="noche" aria-hidden="true">
+          <svg class="noche__luna" viewBox="0 0 80 80"><g filter="url(#f-trazo)"><use href="#i-luna" width="80" height="80"/></g></svg>
+          <svg class="noche__estrella" style="position:absolute;left:46%;top:22px;--t:16px"><g filter="url(#f-garabato)"><use href="#g-cruz" width="100%" height="100%"/></g></svg>
+          <svg class="noche__estrella" style="position:absolute;right:120px;top:96px;--t:12px"><g filter="url(#f-garabato)"><use href="#g-cruz" width="100%" height="100%"/></g></svg>
+          <svg class="noche__estrella" style="position:absolute;left:14px;top:18px;--t:20px"><g filter="url(#f-garabato)"><use href="#g-aro" width="100%" height="100%"/></g></svg>
+          <svg class="noche__gata" viewBox="0 0 200 120" style="--gata:#062F75;--gata-borde:#A9F7F0"><g filter="url(#f-trazo)"><use href="#p-gata-dormida"/></g></svg>
+          <span class="zz"><span>z</span><span>z</span></span>
+        </div>
+        <h3>Emergencias 24/7</h3>
+        <p>De noche, en feriado o un domingo: si tu peludito tiene una emergencia, llamanos de una. No esperés a que abramos.</p>
+        <a class="boton boton--contorno boton--chico" href="tel:+50622534184"><span class="boton__icono" aria-hidden="true"><svg viewBox="0 0 24 24" class="icono-tel"><use href="#i-tel"/></svg></span>Llamar al 2253-4184</a>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <svg class="pie__ola" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70 V38 C120 22 210 50 330 36 C470 20 560 48 700 34 C840 20 930 50 1070 36 C1210 22 1310 46 1440 30 V70Z" fill="#021C4C"/><path d="M0 38 C120 22 210 50 330 36 C470 20 560 48 700 34 C840 20 930 50 1070 36 C1210 22 1310 46 1440 30" fill="none" stroke="#3ED2BC" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 12" vector-effect="non-scaling-stroke"/></svg>
+  <div class="pie">
+    <div class="pie__in">
+      <img class="pie__logo" src="img/logo/logo-oscuro-lema.svg" alt="Pets &amp; Health · Salud, Estética, Nutrición" width="990" height="640" loading="lazy">
+      <p class="pie__lema">El lugar favorito de tus peluditos<i class="bola" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#p-bola" width="100" height="100"/></svg></i><span class="sr">.</span></p>
+      <p>Frente a Plaza Argos, 200 m este del Perimercado Vargas Araya, San Pedro, San José · WhatsApp 8910-1055 · Teléfono 2253-4184</p>
+      <p>Hoja de muestra 4, no se publica. Personajes, íconos y garabatos dibujados para esta propuesta. Logo redibujado de forma provisional. Foto provisional del gato: referencia de Pinterest, autor y permiso por confirmar.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/SplitText.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script>
+(() => {
+  'use strict';
+  const d = document, html = d.documentElement;
+  const $ = (s, c = d) => c.querySelector(s);
+  const $$ = (s, c = d) => [...c.querySelectorAll(s)];
+  const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const FINO = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
+  const safe = (fn) => { try { fn(); } catch (e) { console.warn('[muestra4]', e); } };
+
+  // Movimiento de la marca: juguetón, elástico y corto, como un dibujo animado
+  const M = { ease: 'expo.out', pop: 'back.out(2.2)', io: 'sine.inOut', dur: 0.7, stagger: 0.055, dist: 26, lerp: 0.1 };
+
+  if (!hasGSAP) { html.classList.remove('js'); $$('[data-ver-de-nuevo],.ver').forEach((b) => (b.hidden = true)); return; }
+  gsap.registerPlugin(ScrollTrigger);
+  if (window.SplitText) gsap.registerPlugin(SplitText);
+  ScrollTrigger.config({ ignoreMobileResize: true });
+
+  /* ---------- Piezas de la portada ---------- */
+  const portada = $('[data-portada]'), gig = $('[data-gigante]'), bola = $('[data-bola]'), bolaSvg = $('svg', bola), giro = $('[data-giro]', bola);
+  const perro = $('[data-perro]'), juega = $('[data-reverencia]'), salto = $('[data-salto]'), globo = $('[data-globo]');
+  const cola = $('[data-cola]'), cabeza = $('[data-cabeza]'), ojo = $('[data-ojo]'), marcas = $('[data-marcas]'), meneo = $('[data-meneo]');
+  const gata = $('[data-gata]'), pupilas = $('[data-pupilas]'), ojosGata = $('[data-ojos-gata]'), colaGata = $('[data-cola-gata]');
+  const estela = $('[data-estela]'), estelaPath = $('path', estela), cta = $('[data-cta]');
+  const sentado = $('[data-sentado]'), sentadoDib = $('[data-sentado-dibujo]'), globoS = $('[data-globo-s]');
+  const colaS = $('[data-cola-s]'), colaSLenta = $('[data-cola-s-lenta]'), meneoS = $('[data-meneo-s]');
+  const respira = $('[data-respira]'), cabezaS = $('[data-cabeza-s]'), lengua = $('[data-lengua]'), mira = $('[data-mira]'), ojosS = $('[data-ojos-s]');
+
+  // Letras sueltas para que la pelota las haga rebotar (el punto lo pone la pelota)
+  const palabra = $('[data-palabra]');
+  const letras = [...palabra.textContent].map((ch) => { const s = d.createElement('span'); s.className = 'gl'; s.textContent = ch; return s; });
+  palabra.textContent = ''; letras.forEach((s) => palabra.appendChild(s));
+  const linea = $('[data-linea]');
+  const palabras1 = linea.textContent.trim().split(/\s+/).map((w) => { const s = d.createElement('span'); s.className = 'pal'; s.textContent = w; return s; });
+  linea.textContent = ''; palabras1.forEach((s, i) => { linea.appendChild(s); if (i < palabras1.length - 1) linea.appendChild(d.createTextNode(' ')); });
+
+  // Medidas de Gabarito: línea base y alto de cada letra, en fracciones del tamaño de la letra
+  const BASE = 0.77, ALTO = { p: .51, e: .51, l: .68, u: .49, d: .68, i: .75, t: .62, o: .51, s: .51 };
+  const rel = (el) => { const a = el.getBoundingClientRect(), b = portada.getBoundingClientRect(); return { x: a.left - b.left, y: a.top - b.top, w: a.width, h: a.height }; };
+  const curva = (a, c, b, t) => { const u = 1 - t; return { x: u * u * a.x + 2 * u * t * c.x + t * t * b.x, y: u * u * a.y + 2 * u * t * c.y + t * t * b.y }; };
+  const control = (a, b, h) => ({ x: (a.x + b.x) / 2, y: 2 * (Math.min(a.y, b.y) - h) - (a.y + b.y) / 2 });
+  const f1 = (n) => n.toFixed(1);
+  const tramo = (a, c, b, t) => { const c1 = { x: a.x + (c.x - a.x) * t, y: a.y + (c.y - a.y) * t }, p = curva(a, c, b, t); return `M${f1(a.x)} ${f1(a.y)}Q${f1(c1.x)} ${f1(c1.y)} ${f1(p.x)} ${f1(p.y)}`; };
+
+  // El botón late (rima con la pelota)
+  const latidoBoton = (b) => {
+    if (!b || RM) return;
+    const ic = $('.boton__icono', b), p = $('path', b);
+    gsap.timeline()
+      .fromTo(ic, { scale: 1 }, { scale: 1.18, duration: 0.13, ease: 'power2.out' })
+      .to(ic, { scale: 1, duration: 0.55, ease: 'elastic.out(1,.4)' })
+      .fromTo(p, { strokeDashoffset: 60 }, { strokeDashoffset: 0, duration: 0.6, ease: 'power2.out' }, 0)
+      .fromTo(b, { boxShadow: '0 6px 0 #021C4C, 0 0 0 0 rgba(169,247,240,.75)' }, { boxShadow: '0 6px 0 #021C4C, 0 0 0 16px rgba(169,247,240,0)', duration: 0.9, ease: 'power2.out', clearProps: 'boxShadow' }, 0);
+  };
+  const apachurrar = (el, fuerza = 1) => gsap.timeline()
+    .to(el, { scaleY: 1 - 0.28 * fuerza, scaleX: 1 + 0.22 * fuerza, duration: 0.06, ease: 'power2.out', transformOrigin: '50% 100%' })
+    .to(el, { scaleY: 1, scaleX: 1, duration: 0.42, ease: 'elastic.out(1,.38)' });
+  const menear = (veces = 6) => gsap.timeline()
+    .set(meneo, { opacity: 1 })
+    .fromTo(cola, { rotation: -12 }, { rotation: 16, duration: 0.11, ease: M.io, yoyo: true, repeat: veces * 2 - 1, svgOrigin: '92 78' })
+    .to(cola, { rotation: 0, duration: 0.2, svgOrigin: '92 78' })
+    .to(meneo, { opacity: 0, duration: 0.2 }, '<');
+  const parpadeo = (el, origen) => gsap.timeline().to(el, { scaleY: 0.1, duration: 0.07, svgOrigin: origen }).to(el, { scaleY: 1, duration: 0.11, svgOrigin: origen });
+  // El sentado: meneo rápido de cola y cabeza ladeada, como cuando te escucha
+  const menearS = (veces = 6) => gsap.timeline()
+    .set(meneoS, { opacity: 1 })
+    .fromTo(colaS, { rotation: -14 }, { rotation: 18, duration: 0.1, ease: M.io, yoyo: true, repeat: veces * 2 - 1, svgOrigin: '182 296' })
+    .to(colaS, { rotation: 0, duration: 0.2, svgOrigin: '182 296' })
+    .to(meneoS, { opacity: 0, duration: 0.2 }, '<');
+  let lado = 1;
+  const ladear = () => { lado = -lado; return gsap.timeline()
+    .to(cabezaS, { rotation: 9 * lado, duration: 0.32, ease: M.pop, svgOrigin: '130 150' })
+    .to(cabezaS, { rotation: 0, duration: 0.7, ease: 'elastic.out(1,.45)', svgOrigin: '130 150' }, '+=0.9'); };
+
+  /* ---------- Firma: la pelota rebota en las letras, el dálmata la persigue y la pelota se vuelve el punto ---------- */
+  let firma = null, intro = false;
+  const construirFirma = () => {
+    if (firma) firma.kill();
+    gsap.killTweensOf([bola, bolaSvg, giro, perro, juega, salto, cola, cabeza, gata, sentado, sentadoDib, ...letras]);
+    gsap.set([bola, bolaSvg, perro, sentado, sentadoDib, ...letras], { clearProps: 'transform' });
+    perro.style.display = '';
+    gsap.set('[data-portada] [data-pieza], [data-logo], [data-urgencia], [data-wa]', { autoAlpha: 1 });
+
+    const fs = parseFloat(getComputedStyle(gig).fontSize);
+    const P = portada.getBoundingClientRect();
+    estela.setAttribute('viewBox', `0 0 ${P.width} ${P.height}`);
+    const B = rel(bola), r = B.w / 2, quieta = { x: B.x + r, y: B.y + r };
+    const G = rel(gig), base = G.y + BASE * fs;
+    const encima = (i) => { const L = rel(letras[i]); return { x: L.x + L.w * 0.46, y: base - (ALTO[letras[i].textContent] || 0.51) * fs - r }; };
+
+    // Recorrido: entra por la izquierda, rebota en «e», «u» y «t» y cae como el punto final
+    const pts = [{ x: -3 * r, y: G.y - 1.15 * fs }, encima(1), encima(3), encima(6), quieta];
+    const altos = [0.22, 0.7, 0.55, 0.85].map((k) => k * fs);
+    const durs = [0.34, 0.38, 0.34, 0.46];
+    const golpes = [1, 3, 6];
+    const ctrls = pts.slice(0, -1).map((a, i) => control(a, pts[i + 1], altos[i]));
+    const enteros = ctrls.map((c, i) => tramo(pts[i], c, pts[i + 1], 1));
+
+    const D = rel(perro), S = rel(sentado);
+    gsap.set(bola, { autoAlpha: 0 });
+    gsap.set(perro, { autoAlpha: 0 });
+    gsap.set(sentado, { autoAlpha: 0 });
+    gsap.set(estelaPath, { attr: { d: '' }, opacity: 0.9 });
+
+    intro = true;
+    const tl = gsap.timeline({ defaults: { ease: M.ease }, onComplete: () => { intro = false; } });
+    tl.fromTo('[data-logo]', { autoAlpha: 0, scale: 0.6, rotation: -10 }, { autoAlpha: 1, scale: 1, rotation: 0, duration: 0.6, ease: M.pop }, 0)
+      .fromTo(palabras1, { autoAlpha: 0, yPercent: 70, rotation: () => gsap.utils.random(-8, 8) }, { autoAlpha: 1, yPercent: 0, rotation: 0, duration: M.dur, stagger: M.stagger, ease: 'back.out(1.8)' }, 0.08)
+      .fromTo(letras, { autoAlpha: 0, yPercent: 60, scaleY: 0.3 }, { autoAlpha: 1, yPercent: 0, scaleY: 1, duration: 0.6, stagger: 0.045, ease: M.pop }, 0.18)
+      .fromTo(gata, { autoAlpha: 0, scaleY: 0.2, yPercent: 20 }, { autoAlpha: 1, scaleY: 1, yPercent: 0, duration: 0.55, ease: 'back.out(2.6)', transformOrigin: '50% 72%' }, 0.6)
+      .fromTo('[data-urgencia], [data-wa], [data-sub], [data-cta], [data-tel]', { autoAlpha: 0 }, { autoAlpha: 0, duration: 0.01 }, 0);
+
+    // La pelota y su estela
+    let t = 0.72;
+    tl.set(bola, { autoAlpha: 1 }, t);
+    pts.slice(0, -1).forEach((a, i) => {
+      const b = pts[i + 1], c = ctrls[i], o = { k: 0 }, previo = enteros.slice(0, i).join('');
+      tl.to(o, { k: 1, duration: durs[i], ease: 'none', onUpdate: () => {
+        const p = curva(a, c, b, o.k);
+        gsap.set(bola, { x: p.x - quieta.x, y: p.y - quieta.y });
+        gsap.set(giro, { rotation: (p.x - pts[0].x) / r * 38, svgOrigin: '50 50' });
+        estelaPath.setAttribute('d', previo + tramo(a, c, b, o.k));
+      } }, t);
+      t += durs[i];
+      tl.add(apachurrar(bolaSvg, i === 3 ? 1.1 : 0.9), t);
+      if (golpes[i] != null) {
+        const L = letras[golpes[i]];
+        tl.to(L, { y: 0.07 * fs, scaleY: 0.88, duration: 0.07, ease: 'power2.out' }, t)
+          .to(L, { y: 0, scaleY: 1, duration: 0.65, ease: 'elastic.out(1,.32)' }, t + 0.07);
+      }
+      // Cada rebote enciende una pieza de la portada
+      if (i === 0) tl.fromTo('[data-urgencia]', { autoAlpha: 0, scale: 0.5, y: -12 }, { autoAlpha: 1, scale: 1, y: 0, duration: 0.55, ease: M.pop, immediateRender: false }, t);
+      if (i === 1) tl.fromTo('[data-wa]', { autoAlpha: 0, scale: 0.4, rotation: -30 }, { autoAlpha: 1, scale: 1, rotation: 0, duration: 0.55, ease: M.pop, immediateRender: false }, t);
+      if (i === 2) tl.fromTo('[data-sub]', { autoAlpha: 0, y: M.dist }, { autoAlpha: 1, y: 0, duration: M.dur, immediateRender: false }, t - 0.05);
+    });
+    const llega = t;
+    // Dos rebotitos en su lugar: ya es el punto de «peluditos.»
+    [0.2, 0.08].forEach((k, j) => {
+      const o = { k: 0 }, h = k * fs, dur = j ? 0.14 : 0.22;
+      tl.to(o, { k: 1, duration: dur, ease: 'none', onUpdate: () => gsap.set(bola, { x: 0, y: -4 * h * o.k * (1 - o.k) }) }, t);
+      t += dur;
+      tl.add(apachurrar(bolaSvg, j ? 0.35 : 0.6), t);
+    });
+    tl.set(bola, { x: 0, y: 0 }, t);
+    tl.fromTo('[data-cta]', { autoAlpha: 0, scale: 0.6, y: 14 }, { autoAlpha: 1, scale: 1, y: 0, duration: 0.6, ease: 'back.out(2.6)', immediateRender: false }, llega)
+      .add(() => latidoBoton(cta), llega + 0.35)
+      .fromTo('[data-tel]', { autoAlpha: 0, x: -10 }, { autoAlpha: 1, x: 0, duration: 0.5, immediateRender: false }, llega + 0.12)
+      .to(estelaPath, { opacity: 0, duration: 0.7, ease: 'none' }, llega + 0.45);
+
+    // El dálmata llega saltando detrás de la pelota
+    const salida = { x: -(D.x + D.w + 24), y: -0.25 * fs }, meta = { x: 0, y: 0 }, cs = control(salida, meta, 0.75 * fs), oP = { k: 0 };
+    const tSalto = llega - 0.55, durSalto = 0.78;
+    tl.set(perro, { autoAlpha: 1 }, tSalto)
+      .set(salto, { autoAlpha: 1 }, tSalto)
+      .set(juega, { autoAlpha: 0 }, tSalto)
+      .to(oP, { k: 1, duration: durSalto, ease: 'none', onUpdate: () => { const p = curva(salida, cs, meta, oP.k); gsap.set(perro, { x: p.x, y: p.y }); } }, tSalto)
+      .fromTo(perro, { rotation: -12 }, { rotation: 9, duration: durSalto, ease: 'sine.inOut' }, tSalto)
+      .set(salto, { autoAlpha: 0 }, tSalto + durSalto)
+      .set(juega, { autoAlpha: 1 }, tSalto + durSalto)
+      .set(perro, { rotation: 0 }, tSalto + durSalto)
+      .add(apachurrar(perro, 0.7), tSalto + durSalto)
+      .fromTo(marcas, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: M.pop, svgOrigin: '292 74', immediateRender: false }, tSalto + durSalto + 0.05)
+      .to(marcas, { opacity: 0, duration: 0.4 }, tSalto + durSalto + 0.9)
+      .add(() => menear(5), tSalto + durSalto + 0.1)
+      .fromTo('[data-decor] > *', { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: 1, duration: 0.6, stagger: 0.06, ease: M.pop }, llega + 0.3);
+
+    // Después de jugar, se da cuenta de que lo estás viendo: brinca a su lugar y se sienta de frente
+    // (en escritorio, al hueco de la derecha; en celular, ahí mismo sobre «itos»)
+    const destino = { x: (S.x + S.w / 2) - (D.x + D.w / 2), y: (S.y + S.h * 0.94) - (D.y + D.h * 0.94) };
+    const tBrinco = tSalto + durSalto + 1.25, durBrinco = Math.min(0.66, 0.42 + Math.abs(destino.x) / 2600), oB = { k: 0 };
+    const cb = control({ x: 0, y: 0 }, destino, 0.42 * fs);
+    tl.set(juega, { autoAlpha: 0 }, tBrinco)
+      .set(salto, { autoAlpha: 1 }, tBrinco)
+      .to(oB, { k: 1, duration: durBrinco, ease: 'none', onUpdate: () => { const p = curva({ x: 0, y: 0 }, cb, destino, oB.k); gsap.set(perro, { x: p.x, y: p.y }); } }, tBrinco)
+      .fromTo(perro, { rotation: -10 }, { rotation: 7, duration: durBrinco, ease: 'sine.inOut', immediateRender: false }, tBrinco)
+      .set(perro, { display: 'none' }, tBrinco + durBrinco)
+      .set(sentado, { autoAlpha: 1 }, tBrinco + durBrinco)
+      .fromTo(sentadoDib, { scaleX: 1.18, scaleY: 0.72 }, { scaleX: 1, scaleY: 1, duration: 0.6, ease: 'elastic.out(1,.38)', transformOrigin: '50% 94%', immediateRender: false }, tBrinco + durBrinco)
+      .add(() => { menearS(6); ladear(); }, tBrinco + durBrinco + 0.25);
+    firma = tl;
+    return tl;
+  };
+
+  /* ---------- La gata sigue la pelota (o el mouse) con los ojos ---------- */
+  let puntero = null, portadaVisible = true;
+  if (FINO) addEventListener('pointermove', (e) => { puntero = { x: e.clientX, y: e.clientY, t: performance.now() }; }, { passive: true });
+  const mirar = () => {
+    if (!portadaVisible) return;
+    const g = gata.getBoundingClientRect(); if (!g.width) return;
+    const ex = g.left + g.width * 0.5, ey = g.top + g.height * 0.19;
+    let tx, ty;
+    if (puntero && performance.now() - puntero.t < 4000 && !intro) { tx = puntero.x; ty = puntero.y; }
+    else { const b = bola.getBoundingClientRect(); tx = b.left + b.width / 2; ty = b.top + b.height / 2; }
+    const dx = tx - ex, dy = ty - ey, n = Math.hypot(dx, dy) || 1, k = Math.min(1, n / 120);
+    gsap.set(pupilas, { x: (dx / n) * 2.6 * k, y: (dy / n) * 2 * k });
+    // El sentado te mira de frente; si movés el mouse, lo sigue con los ojos y vuelve a verte
+    const s = sentado.getBoundingClientRect(); if (!s.width) return;
+    let mx = 0, my = 0;
+    if (puntero && performance.now() - puntero.t < 4000 && !intro) {
+      const sx = s.left + s.width * 0.5, sy = s.top + s.height * 0.29, ddx = puntero.x - sx, ddy = puntero.y - sy, nn = Math.hypot(ddx, ddy) || 1, kk = Math.min(1, nn / 160);
+      mx = (ddx / nn) * 4 * kk; my = (ddy / nn) * 3 * kk;
+    }
+    miraX(mx); miraY(my);
+  };
+  const miraX = gsap.quickTo(mira, 'x', { duration: 0.35, ease: 'power2.out' }), miraY = gsap.quickTo(mira, 'y', { duration: 0.35, ease: 'power2.out' });
+
+  /* ---------- La pelota late: dos rebotes como un latido, y el botón late con ella ---------- */
+  const latido = () => {
+    const fs = parseFloat(getComputedStyle(gig).fontSize), h1 = 0.3 * fs, h2 = 0.14 * fs;
+    latidoBoton(cta);
+    gsap.timeline()
+      .to(bola, { y: -h1, duration: 0.17, ease: 'power2.out' })
+      .to(bola, { y: 0, duration: 0.15, ease: 'power2.in' })
+      .add(apachurrar(bolaSvg, 0.7))
+      .to(bola, { y: -h2, duration: 0.12, ease: 'power2.out' }, '-=0.38')
+      .to(bola, { y: 0, duration: 0.11, ease: 'power2.in' })
+      .add(apachurrar(bolaSvg, 0.4));
+    gsap.timeline().to(cabeza, { rotation: 5, duration: 0.17, ease: 'power2.out', svgOrigin: '236 128' }).to(cabeza, { rotation: 0, duration: 0.6, ease: 'elastic.out(1,.4)', svgOrigin: '236 128' });
+  };
+
+  const guau = () => {
+    if (intro || RM) return;
+    gsap.timeline()
+      .fromTo(globo, { autoAlpha: 0, scale: 0.3, rotation: -14 }, { autoAlpha: 1, scale: 1, rotation: 0, duration: 0.4, ease: M.pop, transformOrigin: '20% 90%' })
+      .to(globo, { autoAlpha: 0, scale: 0.8, duration: 0.3, delay: 0.9 });
+    apachurrar(perro, 0.5);
+    latido(); menear(6);
+  };
+  const guauS = () => {
+    if (intro || RM) return;
+    gsap.timeline()
+      .fromTo(globoS, { autoAlpha: 0, scale: 0.3, rotation: 14 }, { autoAlpha: 1, scale: 1, rotation: 0, duration: 0.4, ease: M.pop, transformOrigin: '84% 90%' })
+      .to(globoS, { autoAlpha: 0, scale: 0.8, duration: 0.3, delay: 0.9 });
+    apachurrar(sentadoDib, 0.4);
+    latido(); menearS(7); ladear();
+  };
+
+  /* ---------- Vida después de la entrada ---------- */
+  const vida = () => {
+    if (RM) return;
+    gsap.ticker.add(mirar);
+    let vuelta = 0;
+    const ciclo = () => { if (!intro && portadaVisible && !d.hidden) { latido(); gsap.delayedCall(0.4, () => menearS(4)); if (vuelta++ % 2) gsap.delayedCall(1.2, ladear); } gsap.delayedCall(4.4, ciclo); };
+    gsap.delayedCall(4.6, ciclo);
+    const parpadea = () => { if (!intro && portadaVisible) { parpadeo(ojosS, '130 92'); if (Math.random() > 0.4) gsap.delayedCall(0.25, () => parpadeo(ojosGata, '60 38')); } gsap.delayedCall(gsap.utils.random(2.6, 4.8), parpadea); };
+    // El sentado nunca se queda quieto: respira, jadea con la lengüita y la cola se mece
+    gsap.fromTo(respira, { scaleY: 1, scaleX: 1 }, { scaleY: 1.022, scaleX: 1.01, duration: 0.95, ease: M.io, yoyo: true, repeat: -1, svgOrigin: '130 300' });
+    gsap.fromTo(lengua, { scaleY: 1 }, { scaleY: 1.16, duration: 0.24, ease: M.io, yoyo: true, repeat: -1, svgOrigin: '130 127' });
+    gsap.fromTo(colaSLenta, { rotation: -5 }, { rotation: 9, duration: 0.55, ease: M.io, yoyo: true, repeat: -1, svgOrigin: '182 296' });
+    sentado.addEventListener('click', guauS);
+    gsap.delayedCall(3.4, parpadea);
+    gsap.fromTo(colaGata, { rotation: -7 }, { rotation: 9, duration: 1.6, ease: M.io, yoyo: true, repeat: -1, svgOrigin: '32 138' });
+    $$('[data-decor] > *').forEach((el, i) => gsap.to(el, { y: i % 2 ? -10 : 10, duration: 3.6 + (i % 3) * 0.7, ease: M.io, yoyo: true, repeat: -1, delay: 3.2 + i * 0.2 }));
+    perro.addEventListener('click', guau);
+    if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { portadaVisible = e.isIntersecting; }).observe(portada);
+
+    // El trazo tiembla como un dibujo animado (unas 7 veces por segundo)
+    const hervores = $$('[data-hervor]'); let semilla = 0;
+    setInterval(() => { if (d.hidden) return; semilla = (semilla + 1) % 3; hervores.forEach((h, i) => h.setAttribute('seed', 3 + semilla * 7 + i)); }, 140);
+  };
+
+  // Saltar la entrada con un toque
+  portada.addEventListener('pointerdown', () => { if (intro && firma) firma.progress(1); });
+
+  safe(() => {
+    const repetir = $('[data-ver-de-nuevo]');
+    if (RM) {
+      $('[data-aviso-rm]').hidden = false;
+      repetir.addEventListener('click', () => gsap.fromTo('[data-portada] [data-pieza], [data-logo], [data-urgencia], [data-wa]', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.5, stagger: 0.08, ease: 'none' }));
+      return;
+    }
+    Promise.race([d.fonts ? d.fonts.ready : Promise.resolve(), new Promise((r) => setTimeout(r, 1200))]).then(() => {
+      safe(() => { construirFirma(); vida(); });
+      repetir.addEventListener('click', () => safe(() => { construirFirma(); scrollTo({ top: 0 }); }));
+    });
+  });
+
+  if (RM) $$('.ver').forEach((b) => (b.hidden = true));
+
+  if (!RM) {
+    // Scroll suave
+    safe(() => {
+      if (!window.Lenis) return;
+      const lenis = new Lenis({ lerp: M.lerp, smoothWheel: true });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((t) => lenis.raf(t * 1000));
+      gsap.ticker.lagSmoothing(0);
+    });
+
+    // Trazos que se dibujan: subrayado, raya y garabatos de la foto
+    safe(() => {
+      const dibujar = (paths, trigger, extra = {}) => {
+        $$(paths).forEach((p) => { if (!p.getAttribute('stroke-dasharray')) gsap.set(p, { strokeDasharray: 1, strokeDashoffset: 1 }); else gsap.set(p, { opacity: 0 }); });
+        ScrollTrigger.create({ trigger, start: 'top 82%', once: true, onEnter: () => {
+          $$(paths).forEach((p, i) => {
+            if (p.getAttribute('stroke-dasharray')) gsap.to(p, { opacity: 1, duration: 0.6, delay: i * 0.12 });
+            else gsap.to(p, { strokeDashoffset: 0, duration: 0.7, delay: 0.2 + i * 0.14, ease: 'power2.inOut', ...extra });
+          });
+        } });
+      };
+      dibujar('[data-subrayado] path', '[data-subrayado]');
+      dibujar('[data-raya] path', '[data-raya]');
+      dibujar('[data-dibuja]', '[data-pegatina]');
+    });
+  }
+
+  /* ---------- Muestra: la pelota que late deja dibujada la línea del monitor ---------- */
+  safe(() => {
+    const lienzo = $('[data-lienzo]'), b = $('[data-lienzo-bola]'), e = $('[data-lienzo-estela]'), gb = $('[data-lienzo-giro]');
+    const PISO = 156;
+    // Rueda, rebote grande, rebote chico… como un latido
+    const seg = [];
+    let x = 40;
+    for (let n = 0; n < 3; n++) {
+      seg.push({ x0: x, x1: x + 70, h: 0, dur: 0.32 }); x += 70;
+      seg.push({ x0: x, x1: x + 62, h: 104, dur: 0.36 }); x += 62;
+      seg.push({ x0: x, x1: x + 38, h: 42, dur: 0.22 }); x += 38;
+    }
+    seg.push({ x0: x, x1: 560, h: 0, dur: 0.3 });
+    const forma = (s, k) => {
+      if (!s.h) return { d: `M${f1(s.x0)} ${PISO}L${f1(s.x0 + (s.x1 - s.x0) * k)} ${PISO}`, x: s.x0 + (s.x1 - s.x0) * k, y: PISO };
+      const a = { x: s.x0, y: PISO }, z = { x: s.x1, y: PISO }, c = control(a, z, s.h), p = curva(a, c, z, k);
+      return { d: tramo(a, c, z, k), x: p.x, y: p.y };
+    };
+    const final = seg.map((s) => forma(s, 1).d).join('');
+    const pintarFinal = () => { e.setAttribute('d', final); b.setAttribute('transform', `translate(560 ${PISO})`); };
+    if (RM) { pintarFinal(); return; }
+    let tl = null;
+    const correr = () => {
+      if (tl) tl.kill();
+      tl = gsap.timeline({ repeat: -1, repeatDelay: 0.9, onRepeat: () => gsap.set(e, { opacity: 1 }) });
+      tl.set(e, { opacity: 1, attr: { d: '' } });
+      seg.forEach((s, i) => {
+        const o = { k: 0 }, antes = seg.slice(0, i).map((q) => forma(q, 1).d).join('');
+        tl.to(o, { k: 1, duration: s.dur, ease: 'none', onUpdate: () => { const f = forma(s, o.k); e.setAttribute('d', antes + f.d); b.setAttribute('transform', `translate(${f1(f.x)} ${f1(f.y)})`); gb.setAttribute('transform', `rotate(${f1((f.x - 40) * 1.6)} 50 50)`); } });
+      });
+      tl.to({}, { duration: 1.4 });
+    };
+    pintarFinal();
+    ScrollTrigger.create({ trigger: lienzo, start: 'top 85%', once: true, onEnter: correr });
+    $('[data-ver-latido]').addEventListener('click', correr);
+  });
+
+  // Títulos: las palabras saltan a su lugar
+  const titulos = () => safe(() => {
+    if (!window.SplitText || RM) return;
+    $$('[data-split]').forEach((el) => {
+      SplitText.create(el, { type: 'words', wordsClass: 'palabra', autoSplit: true,
+        onSplit: (self) => gsap.from(self.words, { yPercent: 70, autoAlpha: 0, rotation: () => gsap.utils.random(-9, 9), duration: M.dur, stagger: M.stagger, ease: 'back.out(1.9)', scrollTrigger: { trigger: el, start: 'top 88%', once: true } }) });
+    });
+  });
+  // Revelados: se pegan como stickers
+  safe(() => {
+    if (RM) return;
+    gsap.set('[data-reveal]', { autoAlpha: 0, y: M.dist, rotation: () => gsap.utils.random(-2.5, 2.5) });
+    ScrollTrigger.batch('[data-reveal]', { start: 'top 90%', once: true,
+      onEnter: (els) => gsap.to(els, { autoAlpha: 1, y: 0, rotation: 0, duration: M.dur, stagger: M.stagger, ease: 'back.out(1.5)' }) });
+  });
+  (d.fonts ? d.fonts.ready : Promise.resolve()).then(() => { titulos(); ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+{
+  "revisado": "2026-11-15T15:23:04.780Z",
+  "sitio": "file:///C:/Users/Usiario/Desktop/Projects/Pets&Health/index.html",
+  "navegador": "Chrome/157.0.8103.51 (C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe)",
+  "resumen": {
+    "todoBien": true,
+    "revisar": [],
+    "nota": "La página mide 13,635 px en celular. La captura completa va a 1x para que no se repita; para leerla de cerca usa las capturas de la carpeta tramos."
+  },
+  "vistas": {
+    "celular": {
+      "tamaño": "375 x 812",
+      "capaQueTapa": null,
+      "capturas": {
+        "primeraPantalla": "celular-primera-pantalla.png",
+        "completa": "celular-completa.png",
+        "escalaCompleta": 1
+      },
+      "botonesEnPrimeraPantalla": [
+        {
+          "texto": "Pets & Health, inicio",
+          "destino": "#inicio",
+          "alto": 46
+        },
+        {
+          "texto": "24/7",
+          "destino": "tel:+50622534184",
+          "alto": 44
+        },
+        {
+          "texto": "Escribinos por WhatsApp",
+          "destino": "https://wa.me/50689101055?text=Hola%20Pets%20%26%20Health%2C%20tengo%20una%20consulta.",
+          "alto": 44
+        },
+        {
+          "texto": "Agendá tu cita",
+          "destino": "https://wa.me/50689101055?text=Hola%20Pets%20%26%20Health%2C%20quiero%20agendar%20una%20cita%20para%20mi%20peludito.",
+          "alto": 56
+        },
+        {
+          "texto": "¿Emergencia? 2253-4184",
+          "destino": "tel:+50622534184",
+          "alto": 44
+        }
+      ],
+      "altoPagina": 13635,
+      "anchoDocumento": 375,
+      "anchoVentana": 375,
+      "elementosFuera": [],
+      "cortadosEnElBorde": [],
+      "contenidoOculto": [],
+      "totalOcultos": 0,
+      "imagenesRotas": [],
+      "fuentes": {
+        "cargadas": [
+          "Gabarito"
+        ],
+        "noCargaron": []
+      },
+      "librerias": {
+        "gsap": "3.13.0",
+        "ScrollTrigger": true,
+        "SplitText": true,
+        "Lenis": true,
+        "lenisActivo": true
+      },
+      "titulo": "Veterinaria en San Pedro con emergencias 24/7 | Pets & Health",
+      "h1": [
+        "El lugar favorito de tus peluditos. peluditos."
+      ],
+      "erroresConsola": [],
+      "avisosConsola": [
+        "SplitText called before fonts loaded"
+      ],
+      "archivosQueNoCargaron": []
+    },
+    "escritorio": {
+      "tamaño": "1440 x 900",
+      "capaQueTapa": null,
+      "capturas": {
+        "primeraPantalla": "escritorio-primera-pantalla.png",
+        "completa": "escritorio-completa.png",
+        "escalaCompleta": 0.6
+      },
+      "botonesEnPrimeraPantalla": [
+        {
+          "texto": "Pets & Health, inicio",
+          "destino": "#inicio",
+          "alto": 54
+        },
+        {
+          "texto": "Salud",
+          "destino": "#salud",
+          "alto": 44
+        },
+        {
+          "texto": "Hotel y estética",
+          "destino": "#hotel",
+          "alto": 44
+        },
+        {
+          "texto": "Emergencias",
+          "destino": "#emergencias",
+          "alto": 44
+        },
+        {
+          "texto": "Preguntas",
+          "destino": "#preguntas",
+          "alto": 44
+        },
+        {
+          "texto": "Visitanos",
+          "destino": "#contacto",
+          "alto": 44
+        },
+        {
+          "texto": "Emergencias 24/7",
+          "destino": "tel:+50622534184",
+          "alto": 44
+        },
+        {
+          "texto": "Escribinos por WhatsApp",
+          "destino": "https://wa.me/50689101055?text=Hola%20Pets%20%26%20Health%2C%20tengo%20una%20consulta.",
+          "alto": 44
+        },
+        {
+          "texto": "Agendá tu cita",
+          "destino": "https://wa.me/50689101055?text=Hola%20Pets%20%26%20Health%2C%20quiero%20agendar%20una%20cita%20para%20mi%20peludito.",
+          "alto": 56
+        },
+        {
+          "texto": "¿Emergencia? 2253-4184",
+          "destino": "tel:+50622534184",
+          "alto": 44
+        }
+      ],
+      "altoPagina": 11119,
+      "anchoDocumento": 1440,
+      "anchoVentana": 1440,
+      "elementosFuera": [],
+      "cortadosEnElBorde": [],
+      "contenidoOculto": [],
+      "totalOcultos": 0,
+      "imagenesRotas": [],
+      "fuentes": {
+        "cargadas": [
+          "Gabarito"
+        ],
+        "noCargaron": []
+      },
+      "librerias": {
+        "gsap": "3.13.0",
+        "ScrollTrigger": true,
+        "SplitText": true,
+        "Lenis": true,
+        "lenisActivo": true
+      },
+      "titulo": "Veterinaria en San Pedro con emergencias 24/7 | Pets & Health",
+      "h1": [
+        "El lugar favorito de tus peluditos. peluditos."
+      ],
+      "erroresConsola": [],
+      "avisosConsola": [
+        "SplitText called before fonts loaded"
+      ],
+      "archivosQueNoCargaron": []
+    },
+    "celular-reducir-movimiento": {
+      "tamaño": "375 x 812",
+      "capaQueTapa": null,
+      "capturas": {
+        "primeraPantalla": "celular-reducir-movimiento-primera-pantalla.png"
+      },
+      "botonesEnPrimeraPantalla": [
+        {
+          "texto": "Pets & Health, inicio",
+          "destino": "#inicio",
+          "alto": 46
+        },
+        {
+          "texto": "24/7",
+          "destino": "tel:+50622534184",
+          "alto": 44
+        },
+        {
+          "texto": "Escribinos por WhatsApp",
+          "destino": "https://wa.me/50689101055?text=Hola%20Pets%20%26%20Health%2C%20tengo%20una%20consulta.",
+          "alto": 44
+        },
+        {
+          "texto": "Agendá tu cita",
+          "destino": "https://wa.me/50689101055?text=Hola%20Pets%20%26%20Health%2C%20quiero%20agendar%20una%20cita%20para%20mi%20peludito.",
+          "alto": 56
+        },
+        {
+          "texto": "¿Emergencia? 2253-4184",
+          "destino": "tel:+50622534184",
+          "alto": 44
+        }
+      ],
+      "altoPagina": 13635,
+      "anchoDocumento": 375,
+      "anchoVentana": 375,
+      "elementosFuera": [],
+      "cortadosEnElBorde": [],
+      "contenidoOculto": [],
+      "totalOcultos": 0,
+      "imagenesRotas": [],
+      "fuentes": {
+        "cargadas": [
+          "Gabarito"
+        ],
+        "noCargaron": []
+      },
+      "librerias": {
+        "gsap": "3.13.0",
+        "ScrollTrigger": true,
+        "SplitText": true,
+        "Lenis": true,
+        "lenisActivo": false
+      },
+      "titulo": "Veterinaria en San Pedro con emergencias 24/7 | Pets & Health",
+      "h1": [
+        "El lugar favorito de tus peluditos. peluditos."
+      ],
+      "erroresConsola": [],
+      "avisosConsola": [],
+      "archivosQueNoCargaron": []
+    },
+    "celular-sin-javascript": {
+      "tamaño": "375 x 812",
+      "capaQueTapa": null,
+      "capturas": {
+        "primeraPantalla": "celular-sin-javascript-primera-pantalla.png"
+      },
+      "botonesEnPrimeraPantalla": [
+        {
+          "texto": "Pets & Health, inicio",
+          "destino": "#inicio",
+          "alto": 46
+        },
+        {
+          "texto": "24/7",
+          "destino": "tel:+50622534184",
+          "alto": 44
+        },
+        {
+          "texto": "Escribinos por WhatsApp",
+          "destino": "https://wa.me/50689101055?text=Hola%20Pets%20%26%20Health%2C%20tengo%20una%20consulta.",
+          "alto": 44
+        },
+        {
+          "texto": "Agendá tu cita",
+          "destino": "https://wa.me/50689101055?text=Hola%20Pets%20%26%20Health%2C%20quiero%20agendar%20una%20cita%20para%20mi%20peludito.",
+          "alto": 56
+        },
+        {
+          "texto": "¿Emergencia? 2253-4184",
+          "destino": "tel:+50622534184",
+          "alto": 44
+        }
+      ],
+      "altoPagina": 13635,
+      "anchoDocumento": 375,
+      "anchoVentana": 375,
+      "elementosFuera": [],
+      "cortadosEnElBorde": [],
+      "contenidoOculto": [],
+      "totalOcultos": 0,
+      "imagenesRotas": [],
+      "fuentes": {
+        "cargadas": [
+          "Gabarito"
+        ],
+        "noCargaron": []
+      },
+      "librerias": {
+        "gsap": false,
+        "ScrollTrigger": false,
+        "SplitText": false,
+        "Lenis": false,
+        "lenisActivo": false
+      },
+      "titulo": "Veterinaria en San Pedro con emergencias 24/7 | Pets & Health",
+      "h1": [
+        "El lugar favorito de tus peluditos. peluditos."
+      ],
+      "erroresConsola": [],
+      "avisosConsola": [],
+      "archivosQueNoCargaron": []
+    }
+  }
+}

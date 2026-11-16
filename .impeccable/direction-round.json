@@ -1,0 +1,94 @@
+{
+  "title": "Elegí el mundo visual de Pets & Health",
+  "question": "El sorteo asignó «Caja de luz». Quedate con ella, tomá la alternativa o pedí otra mano.",
+  "options": [
+    {
+      "id": "assigned",
+      "kind": "assigned",
+      "label": "Caja de luz",
+      "kicker": "EL SORTEO",
+      "lineage": "El negatoscopio donde se leen las radiografías digitales de la clínica",
+      "thesis": "La clínica como una caja de luz en la noche: lo que el dueño no puede ver, Pets & Health lo ilumina.",
+      "palette": ["#00163A", "#00204A", "#026E7F", "#54BCB7", "#A9F7F0", "#F2FFFD"],
+      "materials": ["película radiográfica translúcida", "brillo turquesa de caja de luz", "foto de estudio de mascota recortada", "trazo del estetoscopio del logo"],
+      "viewport": "Fondo azul noche; un perro recortado enorme y, detrás de él, «CUIDAMOS» gigante. Una barra de luz turquesa lo recorre y, a su paso, el perro se vuelve película radiográfica. El estetoscopio del logo se dibuja desde la barra hasta el botón «Agendá tu cita».",
+      "risk": "Si el efecto de radiografía se usa de más, la página se siente fría o clínica; se reserva a la portada y a un solo detalle por sección.",
+      "raised": [
+        {"from": "pop-culture-shelf-bollywood-painted-poster", "raise": "El tamaño es jerarquía: la cara de la mascota le gana a todo menos al titular, y nada más compite con ella."},
+        {"from": "operate-b-exposure-record-zone-sheets", "raise": "Escala tonal cerrada: el azul noche tiene pasos fijos y ningún otro tono oscuro entra a la página."},
+        {"from": "reefs-bioluminescent-nocturnal-chromatophore-skin-language", "raise": "Un solo destello: el menta brillante marca solamente lo activo y la acción, nunca la decoración."},
+        {"from": "operate-a-cutting-bench-select-rail", "raise": "El estado es una marca y no un color: el servicio elegido lleva el trazo del estetoscopio, no un cambio de tono."}
+      ]
+    },
+    {
+      "id": "model-pick",
+      "kind": "pick",
+      "label": "Un solo trazo",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "El estetoscopio del logo convertido en una línea continua",
+      "thesis": "Una sola línea turquesa nace del logo, rodea a cada mascota, subraya cada título y termina en el botón.",
+      "palette": ["#00204A", "#131F42", "#54BCB7", "#A9F7F0", "#FFFFFF"],
+      "materials": ["trazo continuo de estetoscopio", "foto de estudio de mascota recortada", "tipografía gigante detrás del sujeto"],
+      "viewport": "Fondo azul marino; un gato recortado con el estetoscopio dibujado a mano a su alrededor; titular enorme detrás; la línea sigue hasta «Agendá tu cita».",
+      "risk": "Es la lectura más directa de tus referencias y del logo, y la más común: un estetoscopio dibujado alrededor de un perro ya se ve en muchas veterinarias."
+    },
+    {
+      "id": "challenger-bollywood",
+      "kind": "challenger",
+      "catalogId": "pop-culture-shelf-bollywood-painted-poster",
+      "label": "Cartel pintado",
+      "verdict": "declined",
+      "lineage": "Carteles de cine pintados a mano",
+      "thesis": "Cada servicio como una escena montada alrededor de una mascota gigante.",
+      "palette": ["#B3122E", "#F2B705", "#1E1A4D"],
+      "materials": ["aerógrafo", "letras con contorno"],
+      "viewport": "Retrato gigante con viñetas orbitando.",
+      "risk": "Ruidoso: repite el problema de exceso de sus flyers.",
+      "case": "Pierde en ambos ejes: el público tico no se identifica con el cartel y la claridad de los servicios cae.",
+      "kept": "El tamaño como jerarquía: la mascota manda."
+    },
+    {
+      "id": "challenger-exposure",
+      "kind": "challenger",
+      "catalogId": "operate-b-exposure-record-zone-sheets",
+      "label": "Registro de exposición",
+      "verdict": "declined",
+      "lineage": "Fichas de cuarto oscuro",
+      "thesis": "Hojas translúcidas superpuestas sobre una escala de grises.",
+      "palette": ["#1A1A1A", "#8C8C8C", "#E6E6E6", "#D6249F"],
+      "materials": ["papel calco", "rayado"],
+      "viewport": "Hojas apiladas en ángulo.",
+      "risk": "Técnico y frío para dueños de mascotas.",
+      "case": "Pierde en ambos ejes: es una herramienta de trabajo, no algo que una familia reconozca.",
+      "kept": "La escala tonal cerrada."
+    },
+    {
+      "id": "challenger-chromatophore",
+      "kind": "challenger",
+      "catalogId": "reefs-bioluminescent-nocturnal-chromatophore-skin-language",
+      "label": "Piel viva",
+      "verdict": "declined",
+      "lineage": "Piel de cefalópodo",
+      "thesis": "Patrones vivos que cambian según el contexto.",
+      "palette": ["#F1E6D2", "#7A2E1F", "#1FB5A8"],
+      "materials": ["sombreadores", "texturas"],
+      "viewport": "Superficie de patrones en movimiento.",
+      "risk": "Abstracto; no explica una clínica.",
+      "case": "Pierde en ambos ejes.",
+      "kept": "Un solo destello para lo activo."
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code", "toggle": false },
+  "canon": true,
+  "canonCard": {
+    "kind": "canon",
+    "label": "La veterinaria estándar",
+    "thesis": "Lo que publica toda veterinaria, bien hecho.",
+    "palette": ["#FFFFFF", "#0F2C5C", "#2BB3A6"],
+    "materials": ["fondo blanco", "fotos de mascotas", "fila de íconos de servicios"],
+    "viewport": "Titular a la izquierda, perro a la derecha, fila de servicios debajo.",
+    "risk": "No se distingue de ninguna otra clínica y no es oscuro como pediste."
+  },
+  "steer": true
+}
