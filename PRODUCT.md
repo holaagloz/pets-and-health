@@ -8,62 +8,61 @@ web
 
 ## Stack
 
-Static HTML/CSS/JS following the user's Ruva Web Pro workflow: GSAP 3.13.0 (ScrollTrigger, SplitText) and Lenis 1.3.11, vendored in `vendor/`. No framework. Deploy target is undecided.
+Static HTML/CSS/JS following the user's Ruva Web Pro workflow: GSAP 3.13.0 (ScrollTrigger, SplitText) and Lenis 1.3.11, vendored in `vendor/`. No framework. Deployed to GitHub Pages from `main` (`.github/workflows/pages.yml`).
 
 ## Users
 
-Pet owners (dogs and cats) around San Pedro de Montes de Oca, San José, Costa Rica, who need a trusted clinic for routine care, grooming, boarding or an emergency. They mostly arrive from a phone, via Instagram, Facebook or a shared link. They want to decide quickly whether to trust the clinic, then message it on WhatsApp.
+Primary audience: owners of veterinary clinics in Costa Rica whom Studio Gloz contacts as prospects. They open the link to judge what kind of site Studio Gloz could build for them, usually on a phone.
 
-Secondary audience: the clinic's owners, who get this as an unsolicited sales demo. The site has to convince them it is worth buying.
+The page itself still speaks to pet owners (dogs and cats) who need a trusted clinic for routine care, grooming, boarding or an emergency, so the prospect sees the real visitor experience.
 
 ## Product Purpose
 
-Pets & Health has no website; Instagram is its only home. The site gives the clinic one official, professional place that shows all its services, its hours, its location and its contact details, and that turns visitors into WhatsApp appointment requests. Success means a visitor understands the full range of care in seconds and taps "Agendá tu cita".
+A sales demo for Studio Gloz. "Gloz Vet" is a fictitious clinic: the name, logo, address and contact are sample data. The site shows how a clinic's services, hours, location and contact turn into WhatsApp appointment requests. Success means a prospect understands the product in seconds and contacts Studio Gloz; every WhatsApp and phone button reaches Studio Gloz.
+
+The page began as an unsolicited proposal for a real clinic. On 2026-11-18 everything that identified that clinic was removed (name, logo, address, phone, WhatsApp, Instagram, client pet names, the photo-rights note).
 
 ## Positioning
 
-An integral veterinary center in one place: medicine (consultation, surgery including orthopedic, lab, digital X-ray, ultrasound, dermatology, physical therapy with treadmill and laser, pharmacy) plus grooming, plus Hotel & Daycare, plus pickup transport. Emergencies are covered 24/7. It has more than 12 years of trajectory (the clinic's own claim).
+An integral veterinary center in one place: medicine (consultation, surgery including orthopedic, lab, digital X-ray, ultrasound, dermatology, physical therapy with treadmill and laser, pharmacy) plus grooming, plus Hotel & Daycare, plus pickup transport. Emergencies are covered 24/7. "More than 12 years" is sample copy.
 
 ## Operating Context
 
-- Contact runs through WhatsApp 8910-1055 (primary) and phone 2253-4184.
-- Hours: Mon–Fri 8:00 a. m.–5:30 p. m., Sat 8:00 a. m.–3:30 p. m. Emergencies 24/7.
-- Address: Frente a Plaza Argos, 200 m este del Perimercado Vargas Araya, San Pedro, San José.
-- Pets Card: a loyalty card requested via WhatsApp and shown from the phone.
-- Pickup and home service with a branded van.
-- Travel paperwork for pets (export permits, air and land travel).
+- Contact (Studio Gloz): WhatsApp and phone 6265-8241, Instagram @studiogloz, web studiogloz.com.
+- Sample location: Ciudad Quesada, San Carlos, Costa Rica.
+- Sample hours: Mon–Fri 8:00 a. m.–5:30 p. m., Sat 8:00 a. m.–3:30 p. m. Emergencies 24/7.
+- Pets Card: a sample loyalty card requested via WhatsApp and shown from the phone.
+- Pickup and home service, travel paperwork for pets.
 
 ## Capabilities and Constraints
 
-- The single primary action is booking an appointment via WhatsApp. Each service button pre-fills a different WhatsApp message.
+- The single primary action is booking an appointment via WhatsApp. Each service button pre-fills a different WhatsApp message ("Hola Gloz Vet, …").
 - Voice: Costa Rican "vos", warm and close ("Agendá", "traé a tu peludito").
-- Undecided and must not be invented: doctor names, credentials (Colegio de Médicos Veterinarios codes), prices, the opening year, and review counts.
-- An unverified second handle (`@petsandhealth.cr`) and the Facebook page "Pets And Health CR" appear in their own graphics.
+- The footer states that Gloz Vet is fictitious and the site is a Studio Gloz demo.
+- Never reintroduce data from the original clinic.
 
 ## Brand Commitments
 
-- Name: "Pets & Health" / "Centro de Atención Veterinaria Pets & Health".
-- Logo: wordmark with a teal stethoscope hooking around "Health", ending in a comb and paw. Tagline: "Salud · Estética · Nutrición". Only a low-res version exists; a faithful SVG redraw is provisional until the original arrives.
-- Logo colors (sampled): navy #00204A, deep teal #026E7F, mid teal #54BCB7, mint #A9F7F0.
-- Their own slogans: "El lugar favorito de tus peluditos", "El segundo hogar de tu mascota".
-- Binding user direction: agency-quality work, explicitly not the AI-generated look of their Instagram. The design should be dark, using a dark tone from the logo as the base.
+- Name: "Gloz Vet" / "Centro de Atención Veterinaria Gloz Vet".
+- Logo: wordmark "Gloz & Vet" in Anton (outlined), with a teal stethoscope hooking from "Gloz" down to "Vet", plus a comb with bubbles and a teal "&" circle. Tagline: "Salud · Estética · Nutrición". Files in `img/logo/`.
+- Logo colors: navy #00204A, teal #2FB3AC, white.
+- Slogans: "El lugar favorito de tus peluditos", "El segundo hogar de tu mascota".
+- Visual world: art direction 4 «Recreo» (royal blue base, hand-drawn cartoon characters).
 
 ## Evidence on Hand
 
-- `research/instagram-auditoria.md`: full audit (services, hours, contact, profile state).
-- `research/instagram/`: screenshots of 45 posts, 4 highlights, and captions of 148 posts.
-- Real named client pets from the highlights (Chocolate, Valentina, Yako, Maki, Hugo, Timón, Ramón's skin case) can be used as stories but not as quotes.
-- No testimonials, ratings, figures or staff names exist. Never fabricate them; use yellow bracket placeholders.
-- Photos: free stock pet photography (pets only, never posed as staff or facilities) is approved for the demo and marked provisional.
+- `research/` holds the original clinic's audit; it is historical and must not feed the demo content.
+- Yellow bracket placeholders stay visible to show where a real clinic's data would go. Never fabricate testimonials, ratings or staff names.
+- Photos: three pet photos from Pinterest references are kept for the demo; replace them if the site is adapted for a real clinic.
 
 ## Product Principles
 
-1. Trust first: real data only, and visible placeholders where facts are missing.
-2. One action: every path ends in a WhatsApp appointment.
+1. Clearly a demo: fictitious brand, sample data, explicit footer notice.
+2. One action: every path ends in a WhatsApp message.
 3. The whole clinic in one glance: medicine, grooming and hotel shown as one integral service.
-4. Mobile first: most visitors come from Instagram on a phone.
-5. Professional craft over volume: fewer, better pieces than their flyer-dense feed.
+4. Mobile first: prospects and pet owners mostly arrive on a phone.
+5. Professional craft over volume.
 
 ## Accessibility & Inclusion
 
-WCAG AA contrast on the dark base. The page works without JavaScript and respects reduced motion.
+WCAG AA contrast. The page works without JavaScript and respects reduced motion.

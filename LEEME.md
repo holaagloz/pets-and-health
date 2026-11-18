@@ -1,6 +1,10 @@
-# Pets & Health · Landing (propuesta)
+# Gloz Vet · Landing de demostración (Studio Gloz)
 
-Página web del Centro de Atención Veterinaria Pets & Health, construida sobre la **dirección de arte 4 «Recreo»**, elegida como definitiva el 15 de noviembre de 2026. Es una muestra para presentarle a la clínica: tiene fotos y logo provisionales y marcadores amarillos donde faltan datos reales.
+Sitio de muestra de Studio Gloz para presentarle a veterinarias el tipo de página que podemos hacer. **Gloz Vet es una clínica ficticia:** el nombre, el logo y los datos son de ejemplo. Nació como propuesta para otra clínica y el 18 de noviembre de 2026 se quitó todo lo que la identificaba. Está construida sobre la **dirección de arte 4 «Recreo»**.
+
+- **Contacto de la demo:** todos los botones de WhatsApp y teléfono van al 6265-8241 de Studio Gloz, así que quien los pruebe nos escribe a nosotros. Instagram [@studiogloz](https://www.instagram.com/studiogloz/) y web [studiogloz.com](https://www.studiogloz.com).
+- **Ubicación de ejemplo:** Ciudad Quesada, San Carlos, Costa Rica.
+- **Se mantuvieron** los servicios, el horario, los lemas, la Pets Card, las fotos y los marcadores amarillos, porque muestran cómo quedaría la página con contenido real.
 
 Para verla, abre `index.html` en Chrome. Para verla como en un celular: clic derecho › Inspeccionar › ícono de celular (arriba a la izquierda del panel) › iPhone SE o 375 px.
 
@@ -11,7 +15,7 @@ Para verla, abre `index.html` en Chrome. Para verla como en un celular: clic der
 | `index.html` | La página. Cada sección empieza y termina con un comentario `<!-- ===== Nombre (inicio) ===== -->`, así se pueden mover sin romper nada. |
 | `css/recreo.css` | Colores, letras y diseño. Los colores están arriba de todo, en `:root`. La primera parte es la de la hoja 4, tal cual; desde el comentario «Página completa» empiezan las secciones nuevas. |
 | `js/recreo.js` | Movimiento: la entrada de la portada (pelota, dálmata y gata), el latido, los textos que saltan, el menú, la barra fija del celular y los enlaces de WhatsApp. |
-| `img/` | Fotos, logo redibujado, `favicon.svg`, `apple-touch-icon.png` (180 px) y `og-recreo.jpg` (1200 × 630, la tarjeta que se ve al compartir el enlace). |
+| `img/` | Fotos, logo redibujado, `favicon.svg`, `apple-touch-icon.png` (180 px) y `og-gloz-vet.jpg` (1200 × 630, la tarjeta que se ve al compartir el enlace). |
 | `fonts/` | Gabarito, la letra de la página, guardada dentro del proyecto. |
 | `vendor/` | Librerías de animación: GSAP 3.13.0 (con ScrollTrigger y SplitText) y Lenis 1.3.11. |
 | `direccion-de-arte-4.html` | La hoja aprobada. No se toca: es la referencia. |
@@ -25,7 +29,7 @@ Para verla, abre `index.html` en Chrome. Para verla como en un celular: clic der
 | 1 | Portada | Igual a la hoja 4: la pelota rebota en «peluditos», el dálmata llega, juega y se sienta de frente. | La firma de la hoja 4. | Agendá tu cita |
 | 2 | Trayectoria y atajos | «Más de 12 años…», datos clave y la tarjeta «Todo en un solo lugar» con seis íconos que llevan a cada servicio. | El subrayado menta se dibuja. | Atajos a cada sección |
 | 3 | Salud | Seis servicios en una «historia clínica» (portapapeles), cada uno con su botón. Sigue Diagnóstico (rayos X, ultrasonido y laboratorio) y «Y los michis, también.» con la foto del gato. | La pelota dibuja el latido en el monitor; los garabatos del gato se dibujan. | Agendá (por servicio) · Agendá un examen · Agendá para tu michi |
-| 4 | Emergencias 24/7 | La noche, con la gata dormida y la luna. | Las «z» flotan. | Llamar al 2253-4184 |
+| 4 | Emergencias 24/7 | La noche, con la gata dormida y la luna. | Las «z» flotan. | Llamar al 6265-8241 |
 | 5 | Hotel & Daycare | Una casita con el perro café asomándose, el sello «Canino Real» y las ocho comodidades. | Las tarjetas se pegan como stickers. | Agendá su estadía |
 | 6 | Estética y grooming | El poodle rompe el papel de la tarjeta, con burbujas dibujadas. | Las burbujas se dibujan. | Agendá su baño |
 | 7 | Te lo ponemos fácil | Transporte, trámites de viaje, vacunas a domicilio y la Pets Card. | La Pets Card flota. | Pedí tu Pets Card |
@@ -33,7 +37,7 @@ Para verla, abre `index.html` en Chrome. Para verla como en un celular: clic der
 | 9 | Tu cita en tres latidos | Los tres pasos, en escalera. | — | Agendá tu cita |
 | 10 | Preguntas frecuentes | Siete dudas con respuestas basadas en datos reales. | La cruz gira al abrir. | Preguntar por WhatsApp |
 | 11 | Horario y contacto | El horario en grande (con el dálmata asomándose), la dirección con «Cómo llegar» y los contactos. | El dálmata ladea la cabeza al pasar el mouse. | Agendá tu cita |
-| 12 | Pie | Logo, lema, secciones, contacto y créditos. | La pelota del lema late. | — |
+| 12 | Pie | Logo, lema, secciones, contacto y aviso de sitio de demostración. | La pelota del lema late. | — |
 
 En celular aparece una **barra fija** con «Agendá tu cita» y un botón de emergencias cuando la portada queda arriba. Se esconde al llegar a Contacto.
 
@@ -41,7 +45,7 @@ En celular aparece una **barra fija** con «Agendá tu cita» y un botón de eme
 
 - **Textos:** directamente en `index.html`, dentro de cada sección.
 - **Mensajes de WhatsApp:** cada botón tiene su mensaje en el atributo `data-msj="..."`. Cambia ese texto y listo: `js/recreo.js` arma el enlace al abrir la página. El enlace escrito en `href` es el respaldo por si el JavaScript falla; si cambias un mensaje, idealmente actualiza también ese `href` (o pídele a Claude que lo regenere).
-- **Número de WhatsApp:** en `js/recreo.js`, la constante `WA` (`50689101055`, con el 506 de Costa Rica), y en los `href` del HTML.
+- **Número de WhatsApp:** en `js/recreo.js`, la constante `WA` (`50662658241`, con el 506 de Costa Rica), y en los `href` del HTML.
 - **Fotos:** en WebP (un formato de imagen liviano), dentro de `img/`. Reemplázalas con el mismo nombre y proporción, o cambia el `src` en el HTML:
   - `gato-recorte.webp` (gatos) es un recorte con fondo transparente, el mismo de la hoja 4.
   - `perro-chocolate-*.webp` (hotel) y `poodle-papel-*.webp` (estética) conservan su fondo blanco: el CSS los mezcla con el hielo de la tarjeta (`mix-blend-mode: multiply`), así que se ven recortados sin serlo. Al poodle se le subió el blanco del fondo a blanco puro para que no se note el borde de la foto.
@@ -61,9 +65,13 @@ En celular aparece una **barra fija** con «Agendá tu cita» y un botón de eme
 
 ## De dónde sale cada dato
 
-Todo sale del Instagram @petshealthcr_veterinaria, revisado el 14 de noviembre de 2026 (`research/instagram-auditoria.md` y los textos de sus publicaciones): servicios, horario, dirección, WhatsApp, teléfono, «más de 12 años», Canino Real Hotel & Daycare (habitaciones, áreas verdes, piscina, juegos supervisados, atención veterinaria 24/7), terapia física con caminadora y láser, cirugía ortopédica, farmacia con pedidos express, marcas de alimento, la frase «Un peludito limpio es un peludito feliz… chineos», la Pets Card y los nombres de pacientes del destacado «Clientes». Los lemas «El lugar favorito de tus peluditos» y «El segundo hogar de tu mascota» son suyos. Los textos son los mismos de la landing anterior; no se agregó ningún dato nuevo.
+Los servicios, el horario y los textos salieron de la propuesta original. El nombre Gloz Vet, la ubicación y el contacto son de Studio Gloz; no queda ningún dato de la clínica original. Los nombres de mascotas de «Ya son de la familia» (Canela, Rocky, Luna, Max, Nala y Toby) son de ejemplo.
 
-## Por validar (decisiones que tomé y la clínica debe revisar)
+### Logo
+
+`img/logo/` tiene el logo Gloz Vet en cuatro versiones: `logo.svg` con fondo de sticker, `logo-lema.svg`, `logo-oscuro.svg` y `logo-oscuro-lema.svg`. Usa la misma composición, colores (marino `#00204A`, turquesa `#2FB3AC`, blanco) y estetoscopio que el redibujo anterior, con la letra Anton convertida en curvas.
+
+## Decisiones de diseño
 
 1. **Navegación nueva:** se agregaron enlaces a las secciones en la barra de arriba (escritorio, desde 1100 px) y un botón de menú en celular. Es el único cambio visible en la portada de la hoja 4.
 2. **Atajos «Todo en un solo lugar»:** es la fila de íconos de la hoja 4, ahora con enlaces a cada sección, para que la persona encuentre rápido lo que busca.
@@ -72,11 +80,11 @@ Todo sale del Instagram @petshealthcr_veterinaria, revisado el 14 de noviembre d
 5. **Íconos nuevos dibujados** con el mismo trazo para cirugía (hueso con curita), terapia física (patita), dermatología (lupa), odontología (diente), farmacia (frasco), viajes (avión de papel) y los pasos de la cita.
 6. **Gatos:** los servicios del bloque «Y los michis, también.» son los generales de la clínica; confirmar que todos aplican a gatos.
 7. **Vacunas a domicilio** y **«Fotos y reportes del día» en el hotel** salen de publicaciones; confirmar que siguen vigentes.
-8. **Verbos de botón:** el principal es siempre «Agendá tu cita»; por contexto se usan «Agendá su estadía», «Agendá su baño», «Agendá un examen», «Agendá para tu michi», «Pedí tu Pets Card» y «Llamar al 2253-4184» para emergencias.
-9. **Los nombres de pacientes** (Chocolate, Valentina, Yako, Maki, Hugo, Timón) salen de sus historias; pedir permiso a sus dueños antes de publicar.
+8. **Verbos de botón:** el principal es siempre «Agendá tu cita»; por contexto se usan «Agendá su estadía», «Agendá su baño», «Agendá un examen», «Agendá para tu michi», «Pedí tu Pets Card» y «Llamar al 6265-8241» para emergencias.
+9. **Los nombres de mascotas** son de ejemplo.
 10. **La Pets Card dibujada** es una ilustración propia, no su tarjeta real.
-11. **«Más de 12 años»** es lo que dice la clínica; idealmente confirmar el año de apertura.
-12. **La página no se indexa en Google** (`noindex`) mientras sea una propuesta.
+11. **«Más de 12 años»** es un dato de ejemplo.
+12. **La página no se indexa en Google** (`noindex`) porque es una demostración.
 
 ## Pendientes (marcadores amarillos y material que falta)
 
@@ -86,13 +94,9 @@ Todo sale del Instagram @petshealthcr_veterinaria, revisado el 14 de noviembre d
 - [BENEFICIOS REALES DE LA PETS CARD]
 - [ZONAS Y TARIFA DEL TRANSPORTE]
 - [PRECIO O RANGO DE LA CONSULTA, SI LO QUIEREN PUBLICAR]
-- Logo original en vector (el actual está redibujado a partir de una imagen de baja resolución).
-- **Derechos de las tres fotos:** el gato, el perro café con blanco y el poodle vienen de referencias de Pinterest, sin autor ni permiso. Sirven para la propuesta; antes de publicar hay que reemplazarlas por fotos propias o conseguir la licencia.
-- Confirmar si `@petsandhealth.cr` y la página de Facebook «Pets And Health CR» son suyas para agregarlas.
+- **Fotos:** el gato, el perro café con blanco y el poodle vienen de referencias de Pinterest. Se dejaron porque es una demostración; si la página se adapta para una clínica real, hay que reemplazarlas por fotos propias o con licencia.
 - Al publicar: dominio propio, cambiar `noindex` por `index`, poner las direcciones completas (`https://…`) en `og:image` y agregar `canonical` y `og:url`.
 
-## Cómo publicar (cuando la clínica apruebe)
+## Cómo publicar
 
-1. Resolver los pendientes de arriba (o decidir publicar con marcadores).
-2. Opción simple: [Netlify Drop](https://app.netlify.com/drop) con una cuenta gratuita y la sesión iniciada, arrastrando la carpeta con `index.html`, `css/`, `js/`, `img/`, `fonts/` y `vendor/`. Sin cuenta, el enlace es temporal.
-3. Conectar el dominio de la clínica y probar el enlace en un chat de WhatsApp para ver la tarjeta para compartir.
+El sitio se publica en GitHub Pages (https://holaagloz.github.io/pets-and-health/) con `.github/workflows/pages.yml` cada vez que se sube un cambio a `main`. Solo se publican `index.html`, `css/`, `js/`, `vendor/`, `fonts/` e `img/`. Para que el enlace no diga "pets-and-health", hay que renombrar el repositorio en GitHub y actualizar `og:image` y `og:url` en `index.html`.

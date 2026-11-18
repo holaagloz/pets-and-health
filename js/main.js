@@ -1,4 +1,4 @@
-/* Pets & Health · Landing
+/* Gloz Vet (demostración) · Landing
    Movimiento de la dirección 3 «Marea que late». La portada es la misma de la hoja aprobada.
    Todo el contenido se ve sin JavaScript y con «Reducir movimiento». */
 (() => {
@@ -9,11 +9,11 @@
   const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const ESCRITORIO = matchMedia('(min-width: 900px)');
   const MOUSE = matchMedia('(hover: hover) and (pointer: fine)').matches;
-  const safe = (fn) => { try { fn(); } catch (e) { console.warn('[pets-health]', e); } };
+  const safe = (fn) => { try { fn(); } catch (e) { console.warn('[gloz-vet]', e); } };
 
   /* ---------- WhatsApp: cada botón arma su enlace con su propio mensaje ----------
      El texto se edita en el atributo data-wa del HTML. */
-  const WA = '50689101055';
+  const WA = '50662658241';
   safe(() => {
     $$('[data-wa]').forEach((a) => { a.href = `https://wa.me/${WA}?text=${encodeURIComponent(a.dataset.wa)}`; });
   });

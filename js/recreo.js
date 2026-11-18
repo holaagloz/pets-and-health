@@ -6,14 +6,14 @@
   const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const FINO = matchMedia('(hover: hover) and (pointer: fine)').matches;
   const hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
-  const safe = (fn) => { try { fn(); } catch (e) { console.warn('[pets-health]', e); } };
+  const safe = (fn) => { try { fn(); } catch (e) { console.warn('[gloz-vet]', e); } };
 
   // Movimiento de la marca: juguetón, elástico y corto, como un dibujo animado
   const M = { ease: 'expo.out', pop: 'back.out(2.2)', io: 'sine.inOut', dur: 0.7, stagger: 0.055, dist: 26, lerp: 0.1 };
 
   /* ---------- Lo que funciona aunque no carguen las librerías ---------- */
   // WhatsApp: cada botón arma su enlace con el mensaje de su atributo data-msj
-  const WA = '50689101055';
+  const WA = '50662658241';
   safe(() => { $$('[data-msj]').forEach((a) => { a.href = `https://wa.me/${WA}?text=${encodeURIComponent(a.dataset.msj)}`; }); });
 
   // Navegación: al bajar se vuelve una barra marino
