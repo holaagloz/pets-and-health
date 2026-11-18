@@ -13,7 +13,7 @@
 
   /* ---------- Lo que funciona aunque no carguen las librerías ---------- */
   // WhatsApp: cada botón arma su enlace con el mensaje de su atributo data-msj
-  const WA = '50662658241';
+  const WA = '50662652841';
   safe(() => { $$('[data-msj]').forEach((a) => { a.href = `https://wa.me/${WA}?text=${encodeURIComponent(a.dataset.msj)}`; }); });
 
   // Navegación: al bajar se vuelve una barra marino

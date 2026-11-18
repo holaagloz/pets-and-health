@@ -13,7 +13,7 @@
 
   /* ---------- WhatsApp: cada botón arma su enlace con su propio mensaje ----------
      El texto se edita en el atributo data-wa del HTML. */
-  const WA = '50662658241';
+  const WA = '50662652841';
   safe(() => {
     $$('[data-wa]').forEach((a) => { a.href = `https://wa.me/${WA}?text=${encodeURIComponent(a.dataset.wa)}`; });
   });

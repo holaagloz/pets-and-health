@@ -45,7 +45,7 @@ En celular aparece una **barra fija** con «Agendá tu cita» y un botón de eme
 
 - **Textos:** directamente en `index.html`, dentro de cada sección.
 - **Mensajes de WhatsApp:** cada botón tiene su mensaje en el atributo `data-msj="..."`. Cambia ese texto y listo: `js/recreo.js` arma el enlace al abrir la página. El enlace escrito en `href` es el respaldo por si el JavaScript falla; si cambias un mensaje, idealmente actualiza también ese `href` (o pídele a Claude que lo regenere).
-- **Número de WhatsApp:** en `js/recreo.js`, la constante `WA` (`50662658241`, con el 506 de Costa Rica), y en los `href` del HTML.
+- **Número de WhatsApp:** en `js/recreo.js`, la constante `WA` (`50662652841`, con el 506 de Costa Rica), y en los `href` del HTML.
 - **Fotos:** en WebP (un formato de imagen liviano), dentro de `img/`. Reemplázalas con el mismo nombre y proporción, o cambia el `src` en el HTML:
   - `gato-recorte.webp` (gatos) es un recorte con fondo transparente, el mismo de la hoja 4.
   - `perro-chocolate-*.webp` (hotel) y `poodle-papel-*.webp` (estética) conservan su fondo blanco: el CSS los mezcla con el hielo de la tarjeta (`mix-blend-mode: multiply`), así que se ven recortados sin serlo. Al poodle se le subió el blanco del fondo a blanco puro para que no se note el borde de la foto.
