@@ -28,7 +28,7 @@ An integral veterinary center in one place: medicine (consultation, surgery incl
 
 ## Operating Context
 
-- Contact (Studio Gloz): WhatsApp and phone 6265-8241, Instagram @studiogloz, web studiogloz.com.
+- Contact (Studio Gloz): WhatsApp and phone 6265-2841, Instagram @studiogloz, web studiogloz.com.
 - Sample location: Ciudad Quesada, San Carlos, Costa Rica.
 - Sample hours: Mon–Fri 8:00 a. m.–5:30 p. m., Sat 8:00 a. m.–3:30 p. m. Emergencies 24/7.
 - Pets Card: a sample loyalty card requested via WhatsApp and shown from the phone.

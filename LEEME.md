@@ -2,7 +2,7 @@
 
 Sitio de muestra de Studio Gloz para presentarle a veterinarias el tipo de página que podemos hacer. **Gloz Vet es una clínica ficticia:** el nombre, el logo y los datos son de ejemplo. Nació como propuesta para otra clínica y el 18 de noviembre de 2026 se quitó todo lo que la identificaba. Está construida sobre la **dirección de arte 4 «Recreo»**.
 
-- **Contacto de la demo:** todos los botones de WhatsApp y teléfono van al 6265-8241 de Studio Gloz, así que quien los pruebe nos escribe a nosotros. Instagram [@studiogloz](https://www.instagram.com/studiogloz/) y web [studiogloz.com](https://www.studiogloz.com).
+- **Contacto de la demo:** todos los botones de WhatsApp y teléfono van al 6265-2841 de Studio Gloz, así que quien los pruebe nos escribe a nosotros. Instagram [@studiogloz](https://www.instagram.com/studiogloz/) y web [studiogloz.com](https://www.studiogloz.com).
 - **Ubicación de ejemplo:** Ciudad Quesada, San Carlos, Costa Rica.
 - **Se mantuvieron** los servicios, el horario, los lemas, la Pets Card, las fotos y los marcadores amarillos, porque muestran cómo quedaría la página con contenido real.
 
@@ -29,7 +29,7 @@ Para verla, abre `index.html` en Chrome. Para verla como en un celular: clic der
 | 1 | Portada | Igual a la hoja 4: la pelota rebota en «peluditos», el dálmata llega, juega y se sienta de frente. | La firma de la hoja 4. | Agendá tu cita |
 | 2 | Trayectoria y atajos | «Más de 12 años…», datos clave y la tarjeta «Todo en un solo lugar» con seis íconos que llevan a cada servicio. | El subrayado menta se dibuja. | Atajos a cada sección |
 | 3 | Salud | Seis servicios en una «historia clínica» (portapapeles), cada uno con su botón. Sigue Diagnóstico (rayos X, ultrasonido y laboratorio) y «Y los michis, también.» con la foto del gato. | La pelota dibuja el latido en el monitor; los garabatos del gato se dibujan. | Agendá (por servicio) · Agendá un examen · Agendá para tu michi |
-| 4 | Emergencias 24/7 | La noche, con la gata dormida y la luna. | Las «z» flotan. | Llamar al 6265-8241 |
+| 4 | Emergencias 24/7 | La noche, con la gata dormida y la luna. | Las «z» flotan. | Llamar al 6265-2841 |
 | 5 | Hotel & Daycare | Una casita con el perro café asomándose, el sello «Canino Real» y las ocho comodidades. | Las tarjetas se pegan como stickers. | Agendá su estadía |
 | 6 | Estética y grooming | El poodle rompe el papel de la tarjeta, con burbujas dibujadas. | Las burbujas se dibujan. | Agendá su baño |
 | 7 | Te lo ponemos fácil | Transporte, trámites de viaje, vacunas a domicilio y la Pets Card. | La Pets Card flota. | Pedí tu Pets Card |
@@ -80,7 +80,7 @@ Los servicios, el horario y los textos salieron de la propuesta original. El nom
 5. **Íconos nuevos dibujados** con el mismo trazo para cirugía (hueso con curita), terapia física (patita), dermatología (lupa), odontología (diente), farmacia (frasco), viajes (avión de papel) y los pasos de la cita.
 6. **Gatos:** los servicios del bloque «Y los michis, también.» son los generales de la clínica; confirmar que todos aplican a gatos.
 7. **Vacunas a domicilio** y **«Fotos y reportes del día» en el hotel** salen de publicaciones; confirmar que siguen vigentes.
-8. **Verbos de botón:** el principal es siempre «Agendá tu cita»; por contexto se usan «Agendá su estadía», «Agendá su baño», «Agendá un examen», «Agendá para tu michi», «Pedí tu Pets Card» y «Llamar al 6265-8241» para emergencias.
+8. **Verbos de botón:** el principal es siempre «Agendá tu cita»; por contexto se usan «Agendá su estadía», «Agendá su baño», «Agendá un examen», «Agendá para tu michi», «Pedí tu Pets Card» y «Llamar al 6265-2841» para emergencias.
 9. **Los nombres de mascotas** son de ejemplo.
 10. **La Pets Card dibujada** es una ilustración propia, no su tarjeta real.
 11. **«Más de 12 años»** es un dato de ejemplo.
